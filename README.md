@@ -1,13 +1,12 @@
-<h1>Jeopardy</h1>
+#Jeopardy
 
-<h2>DTR link:</h2>
+###DTR link:
 https://gist.github.com/lorynmason/2579b3ab535eeb7e1a1513922487e383
 
-<h2>Project Background:</h2>
+###Project Background:
 
 This project will help us learn object-oriented programming (OOP) principles by building the game Jeopardy. This project is an opportunity for us to use classes and to build a program in a larger scale than what we have previously done in other projects. This project is also an opportunity for us to build out a program based on user stories. In this project, we will also approach our challenges with an analytical approach.
-
-<h2>Project Goals:</h2>
+Project Goals:
   
   * Write a program from scratch
   * Design and implement OOP patterns
@@ -16,7 +15,7 @@ This project will help us learn object-oriented programming (OOP) principles by 
   * Write modular, reusable code that follows SRP (Single Responibility Principle)
   * Create a robust test suite that thoroughly tests all functionality of a client-side application
 
-<h2>About the game:</h2>
+###About the game:
 
 Game play:
 
@@ -56,7 +55,7 @@ When it is my turn:
   * I should be able to input an answer after the clue I selected has been revealed
   * My score should increment or decrement by the point value of the clue if I answered right or wrong, respectively
 
-<h2>Design and Layout</h2>
+###Design and Layout
 
 Our Inspiration:
 
