@@ -3,9 +3,9 @@
 }
 
 body {
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
-  background: linear-gradient(to right, #18cbea, #42ace8, #6366e5, #664ddf, #5569d3, #4b7bcc, #7055e1, #823ded, #3c84c4, #3c84c4,#1a6781, #065a67);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(to top right, #18cbea, #42ace8, #6366e5, #664ddf, #5569d3, #4b7bcc, #7055e1, #823ded, #3c84c4, #3c84c4,#1a6781, #065a67);
   font-family: 'Oswald', sans-serif;
   font-size: 1em;
   font-weight: 600;
@@ -17,6 +17,7 @@ header {
   align-items: center;
   display: flex;
   justify-content: space-around;
+  margin: 0px 30px;
 }
 
 .small-card {
@@ -42,11 +43,17 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
-  margin: 15px 40px 0px;
+  margin: 15px 85px 35px;
 }
 
 h1 {
   align-self: flex-end;
   color: #ffffff;
   font-size: 1.5em;
+  text-shadow:
+    -1px -1px 0 rgba(51, 51, 51),  
+    1px -1px 0 rgba(51, 51, 51),
+    -1px 1px 0 rgba(51, 51, 51),
+    1px 1px 0 rgba(51, 51, 51),
+    -4px 5px rgba(51, 51, 51, 0.4);
 }
