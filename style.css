@@ -8,6 +8,7 @@ body {
   background: linear-gradient(to right, #18cbea, #42ace8, #6366e5, #664ddf, #5569d3, #4b7bcc, #7055e1, #823ded, #3c84c4, #3c84c4,#1a6781, #065a67);
   font-family: 'Oswald', sans-serif;
   font-size: 1em;
+  font-weight: 600;
 }
 
 /*header*/
@@ -27,7 +28,25 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 1.2em;
-  height: 60px;
+  height: 70px;
   justify-content: space-evenly;
-  width: 150px;
+  width: 130px;
+}
+
+/*main*/
+
+main {
+  display: grid;
+  font-size: 1.5em;
+  grid-row-gap: 40px; 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 15px 40px 0px;
+}
+
+h1 {
+  align-self: flex-end;
+  color: #ffffff;
+  font-size: 1.5em;
 }
