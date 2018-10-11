@@ -4,7 +4,7 @@
 
 body {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fill;
   background: linear-gradient(to top right, #18cbea, #42ace8, #6366e5, #664ddf, #5569d3, #4b7bcc, #7055e1, #823ded, #3c84c4, #3c84c4,#1a6781, #065a67);
   font-family: 'Oswald', sans-serif;
   font-size: 1em;

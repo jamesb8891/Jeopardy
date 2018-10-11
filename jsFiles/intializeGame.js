@@ -8,13 +8,16 @@ var startButton = document.querySelector('.start-button');
 var startMenuContainer = document.querySelector('.start-menu-container');
 
 
-startButton.addEventListener("click", initializePlayers);
+startButton.addEventListener('click', initializePlayers);
 
-function initializePlayers(e) {
-  e.preventDefault()
+function initializePlayers() {
   playerOneName.innerText = playerOneInput.value || 'Player 1';
   playerTwoName.innerText = playerTwoInput.value || 'Player 2';
   playerThreeName.innerText = playerThreeInput.value || 'Player 3';
-  startMenuContainer.classList.add('hidden')
-  document.querySelector('.point-card-container').classList.remove('hidden')
+  unhideCards();
+}
+
+const unhideCards = () => {
+  startMenuContainer.classList.toggle('hidden')
+  document.querySelector('.point-card-container').classList.toggle('hidden')
 }
