@@ -34,18 +34,20 @@ header {
   width: 130px;
 }
 
-.point-cards:hover {
-  background: rgba(224, 222, 229, 0.7);
-  color: #4c0e82;
-  cursor: pointer;
-}
-
-
+/*start-menu*/
 .start-menu {
   height: 600px;
   margin: 0 auto;
   padding: 40px;
   width: 800px;
+  position: absolute;
+}
+
+.start-menu-container {
+  margin: 15px 85px 35px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
 }
 
 /*main*/
@@ -56,10 +58,13 @@ header {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
+  margin: 5px 150px 35px;
 }
 
-main {
-  margin: 15px 85px 35px;
+.point-cards:hover {
+  background: rgba(224, 222, 229, 0.7);
+  color: #4c0e82;
+  cursor: pointer;
 }
 
 h1 {
@@ -111,8 +116,4 @@ h1 {
 
 .how-to-play-text {
   font-size: 1.7em;
-}
-
-.hidden {
-  display: none;
 }
