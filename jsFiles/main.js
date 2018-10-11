@@ -5,11 +5,11 @@ class Game {
     this.players = players;
      // (array of instances of players)
   }
-  start()
-  reset()
-  pause()
-  advanceRound()
-  declareWinner()
+  // start()
+  // reset()
+  // pause()
+  // advanceRound()
+  // declareWinner()
 }
 
 class Clues {
@@ -25,7 +25,7 @@ class DailyDouble extends Clues {
   constructor ( question, answer, pointValue ) {
     super( question, answer, pointValue );
   }
-  checkWager()
+  // checkWager()
 }
 
 class GameBoard {
@@ -42,7 +42,9 @@ class Player {
     this.id = id;
     // name
   }
-  submitAnswer()
-  submitWager()
-  updateScore()
+  // submitAnswer()
+  // submitWager()
+  // updateScore()
 }
+
+module.exports = { Game, Clues, DailyDouble, GameBoard, Player }
