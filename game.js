@@ -16,7 +16,5 @@ function initializePlayers(e) {
   playerTwoName.innerText = playerTwoInput.value || 'Player 2';
   playerThreeName.innerText = playerThreeInput.value || 'Player 3';
   startMenuContainer.classList.add('hidden')
+  document.querySelector('.point-card-container').classList.remove('hidden')
 }
-
-
- // newElement.innerHTML = `<li>Tax Amount (in dollars): $${taxAmount}</li>
