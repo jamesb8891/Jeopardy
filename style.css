@@ -72,7 +72,7 @@ header {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
-  margin: 5px 150px 35px;
+  margin: 0px 150px 15px;
 }
 
 .point-cards:hover {
