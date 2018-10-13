@@ -1,30 +1,24 @@
-
 var playerOneInput = document.querySelector('.player-one-input');
 var playerTwoInput = document.querySelector('.player-two-input');
 var playerThreeInput = document.querySelector('.player-three-input');
-var playerOneName = document.querySelector('.player-one-name');
-var playerTwoName = document.querySelector('.player-two-name');
-var playerThreeName = document.querySelector('.player-three-name');
 var startButton = document.querySelector('.start-button');
-var startMenu = document.querySelector('.start-menu');
 var category1 = document.querySelector('.category1');
 var category2 = document.querySelector('.category2');
 var category3 = document.querySelector('.category3');
 var category4 = document.querySelector('.category4');
 let categoriesArray = []
 
-
 startButton.addEventListener("click", initializePlayers);
 
 function initializePlayers() {
-  playerOneName.innerText = playerOneInput.value || "Player 1";
-  playerTwoName.innerText = playerTwoInput.value || "Player 2";
-  playerThreeName.innerText = playerThreeInput.value || "Player 3";
+  document.querySelector('.player-one-name').innerText = playerOneInput.value || "Player 1";
+  document.querySelector('.player-two-name').innerText = playerTwoInput.value || "Player 2";
+  document.querySelector('.player-two-name').innerText = playerThreeInput.value || "Player 3";
   hideMenu();
 }
 
 const hideMenu = () => {
-  startMenu.remove()
+  document.querySelector('.start-menu').remove()
 }
 
 const domCategories = () => {

@@ -47,4 +47,8 @@ class Player {
   // updateScore()
 }
 
-module.exports = { Game, Clues, DailyDouble, GameBoard, Player };
+if (typeof module !== 'undefined') {
+  module.exports = { Game, Clues, DailyDouble, GameBoard, Player };
+}
+
+
