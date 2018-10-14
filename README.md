@@ -1,12 +1,14 @@
 # Jeopardy
 
-### DTR link:
-https://gist.github.com/lorynmason/2579b3ab535eeb7e1a1513922487e383
+### Abstract:
+
+A three player Jeopardy in browser game. Turing School of Software & Design Front-End Program Mod 2 project.
 
 ### Project Background:
 
 This project will help us learn object-oriented programming (OOP) principles by building the game Jeopardy. This project is an opportunity for us to use classes and to build a program in a larger scale than what we have previously done in other projects. This project is also an opportunity for us to build out a program based on user stories. In this project, we will also approach our challenges with an analytical approach.
-Project Goals:
+
+### Project Goals:
   
   * Write a program from scratch
   * Design and implement OOP patterns
@@ -57,13 +59,13 @@ When it is my turn:
 
 ### Design and Layout
 
-Our Inspiration:
+##### Our Inspiration:
 
 <img width="393" alt="screen shot 2018-10-09 at 2 46 32 pm" src="https://user-images.githubusercontent.com/40005248/46751216-188f0200-cc77-11e8-8b52-7da8711cbe65.png">
 
 We choose this as our inspiration because we liked the rounded edges, the drop shadow, and the overall clean look of the button.
 
-Our Wireframes:
+##### Our Wireframes:
 
 <img width="635" alt="screen shot 2018-10-09 at 2 49 25 pm" src="https://user-images.githubusercontent.com/40005248/46751330-7d4a5c80-cc77-11e8-98b8-bf043b8dbe20.png">
 
@@ -71,3 +73,10 @@ Our Wireframes:
 
 <img width="632" alt="screen shot 2018-10-09 at 2 51 07 pm" src="https://user-images.githubusercontent.com/40005248/46751400-acf96480-cc77-11e8-83a5-ff50bfcefbbd.png">
 
+### Collaboration:
+James  Burbage @jamesb8891
+
+Loryn Mason @lorynmason
+
+##### DTR link:
+https://gist.github.com/lorynmason/2579b3ab535eeb7e1a1513922487e383
