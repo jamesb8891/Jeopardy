@@ -28,9 +28,13 @@ const domCategories = () => {
   category4.innerText = categoriesArray[3]
 }
 
+
 const setCategories= () => {
+  var categoryKeys = Object.keys(data.categories).map(key => {    
+    return key.replace(/([A-U])/g, ' $1').replace(/^./, function(string){ return string.toUpperCase(); })
+  })
   for(var i = 0; categoriesArray.length < 4; i++) {
-    let newCat = (Object.keys(data.categories)[Math.floor(Math.random()* (0, 10))])
+    let newCat = (categoryKeys[Math.floor(Math.random()* (0, 10))])
     if (!categoriesArray.includes(newCat)) {
     categoriesArray.push(newCat);
     }
@@ -38,4 +42,7 @@ const setCategories= () => {
   domCategories()
   return categoriesArray
 }
+
 setCategories()
+
+
