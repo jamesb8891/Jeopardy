@@ -13,7 +13,7 @@ startButton.addEventListener("click", initializePlayers);
 function initializePlayers() {
   document.querySelector('.player-one-name').innerText = playerOneInput.value || "Player 1";
   document.querySelector('.player-two-name').innerText = playerTwoInput.value || "Player 2";
-  document.querySelector('.player-two-name').innerText = playerThreeInput.value || "Player 3";
+  document.querySelector('.player-three-name').innerText = playerThreeInput.value || "Player 3";
   hideMenu();
 }
 
