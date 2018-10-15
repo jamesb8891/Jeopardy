@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Game = require('../jsFiles/classes/gameClass.js');
-
+const Game = require('../JS/classes/Game.js');
+const data = require('../JS/Data.js');
 
 describe('Game', function() {
   
@@ -27,8 +27,13 @@ describe('Game', function() {
   it('should be able to increase round to 2', function() {
     let game1 = new Game();
     game1.advanceRound()
-   
     expect(game1.round).to.equal(2)
+  })
+
+  it('should put four random categories into an array', function() {
+    let game1 = new Game();
+    game1.setCategories()
+    expect(categoriesArray.length).to.equal(4)
   })
 
 })

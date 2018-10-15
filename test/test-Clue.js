@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Clue = require('../jsFiles/classes/clueClass.js');
+const Clue = require('../JS/classes/Clue.js');
 
 describe('Clue', function() {
   it('should return true', function() {
