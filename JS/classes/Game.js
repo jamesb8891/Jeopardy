@@ -9,25 +9,6 @@ class Game {
     return this.round++
   }
 
-  initializePlayers() {
-    document.querySelector('.player-one-name').innerText = playerOneInput.value || "Player 1";
-    document.querySelector('.player-two-name').innerText = playerTwoInput.value || "Player 2";
-    document.querySelector('.player-three-name').innerText = playerThreeInput.value || "Player 3";
-    this.hideMenu();
-  }
-
-  hideMenu() {
-    document.querySelector('.start-menu').remove()
-  }
-
-  domCategories () {
-    category1.innerText = categoriesArray[0]
-    category2.innerText = categoriesArray[1]
-    category3.innerText = categoriesArray[2]
-    category4.innerText = categoriesArray[3]
-  }
-
-
   setCategories () {
     var categoryKeys = Object.keys(data.categories).map(key => {    
       return key.replace(/([A-U])/g, ' $1').replace(/^./, function(string){ return string.toUpperCase(); })
@@ -38,9 +19,11 @@ class Game {
       categoriesArray.push(newCat);
       }
     }
-    this.domCategories()
+    domUpdates.domCategories()
     return categoriesArray
   }
+
+
   // declareWinner()
   // start()
   // reset()
@@ -52,3 +35,4 @@ class Game {
 if (typeof module !== 'undefined') {
   module.exports = Game;
 }
+
