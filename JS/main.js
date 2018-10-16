@@ -6,13 +6,26 @@ var category1 = document.querySelector('.category1');
 var category2 = document.querySelector('.category2');
 var category3 = document.querySelector('.category3');
 var category4 = document.querySelector('.category4');
-let categoriesArray = [];
+// let categoriesArray = [];
+let gameQuestions = [];
+let randomCategoryIds = [];
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 
 const initialize = () => {
   var game = new Game;
-  game.setCategories()
+  game.recursiveCall();
+  game.filterQuestions();
+  game.retrieveCategory(0);
+  game.retrieveCategory(1);
+  game.retrieveCategory(2);
+  game.retrieveCategory(3);
+  game.updateCategoryId();
+  domUpdates.domCategories();
+  domUpdates.domClues();
 }
 
 initialize()
+
+console.log(randomCategoryIds)
+console.log(gameQuestions)
