@@ -9,20 +9,6 @@ class Game {
     return this.round++
   }
 
-  // setCategories () {
-  //   var categoryKeys = Object.keys(data.categories).map(key => {    
-  //     return key.replace(/([A-U])/g, ' $1').replace(/^./, function(string){ return string.toUpperCase(); })
-  //   })
-  //   for(var i = 0; categoriesArray.length < 4; i++) {
-  //     let newCat = (categoryKeys[Math.floor(Math.random()* (0, 10))])
-  //     if (!categoriesArray.includes(newCat)) {
-  //     categoriesArray.push(newCat);
-  //     }
-  //   }
-  //   domUpdates.domCategories()
-  //   return categoriesArray
-  // }
-
   generateRandomCategoryIds(){
     const randomNumber = Math.floor(Math.random() * 10 + 1);
     if (!randomCategoryIds.includes(randomNumber)) {
@@ -81,7 +67,6 @@ class Game {
   // advanceRound()
 
 }
-// console.log(randomCategoryIds)
 
 
 if (typeof module !== 'undefined') {
