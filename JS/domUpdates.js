@@ -13,9 +13,10 @@ const domUpdates = {
   },
 
   domClues() {
-    for(let i = 0; i < 20; i++) {
+    for(var i = 0; i < 20; i++) {
       card[i] = document.querySelector(`.card${i}`).innerText = gameQuestions[`${i}`].pointValue
     }
+    i = i
   },
   
   domClueCard(e){
@@ -29,9 +30,14 @@ const domUpdates = {
     console.log(clueCard)
   },
 
-  domGetAnswer(e) {
-    if(e.target.className === 'answer-button') { 
-      console.log(answerInput.value)
+  domGetAnswer() {
+    let matchedClue = gameQuestions.find((clue) => {
+      return clue.question === document.querySelector('.card-question').innerText
+    })
+    if (matchedClue.answer === answerInput.value){
+      console.log('correct')
+    } else {
+      console.log('fail poop on you')
     }
   },
 } 
