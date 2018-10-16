@@ -12,49 +12,28 @@ const domUpdates = {
     category4.innerText = gameQuestions[16].categoryId;
   },
 
-  domClues(){
-    document.querySelector('.card1a').innerText = gameQuestions[0].pointValue;
-    document.querySelector('.card2a').innerText = gameQuestions[1].pointValue;
-    document.querySelector('.card3a').innerText = gameQuestions[2].pointValue;
-    document.querySelector('.card4a').innerText = gameQuestions[3].pointValue;
-    document.querySelector('.card5a').innerText = gameQuestions[4].pointValue;
-    document.querySelector('.card1b').innerText = gameQuestions[5].pointValue;
-    document.querySelector('.card2b').innerText = gameQuestions[6].pointValue;
-    document.querySelector('.card3b').innerText = gameQuestions[7].pointValue;
-    document.querySelector('.card4b').innerText = gameQuestions[8].pointValue;
-    document.querySelector('.card5b').innerText = gameQuestions[9].pointValue;
-    document.querySelector('.card1c').innerText = gameQuestions[10].pointValue;
-    document.querySelector('.card2c').innerText = gameQuestions[11].pointValue;
-    document.querySelector('.card3c').innerText = gameQuestions[12].pointValue;
-    document.querySelector('.card4c').innerText = gameQuestions[13].pointValue;
-    document.querySelector('.card5c').innerText = gameQuestions[14].pointValue;
-    document.querySelector('.card1d').innerText = gameQuestions[15].pointValue;
-    document.querySelector('.card2d').innerText = gameQuestions[16].pointValue;
-    document.querySelector('.card3d').innerText = gameQuestions[17].pointValue;
-    document.querySelector('.card4d').innerText = gameQuestions[18].pointValue;
-    document.querySelector('.card5d').innerText = gameQuestions[19].pointValue;
-  }, 
+  domClues() {
+    for(let i = 0; i < 20; i++) {
+      card[i] = document.querySelector(`.card${i}`).innerText = gameQuestions[`${i}`].pointValue
+    }
+  },
   
   domClueCard(e){
-    if(e.target.className === 'card1a') {
-      var clueCard = document.createElement('section')
-      clueCard.className="clue-container"
-      clueCard.innerHTML = `
-        <section class="display-card clueCard">
-          <p class="card-question">${gameQuestions[0].question}</p>
-          <p> Answer <input class="answer-input" placeholder="Enter Your Answer" type="text"></p>
-          <button class="answer-button">Enter</button>
-        </section>`
-      document.querySelector('HEADER').append(clueCard)
-      console.log(clueCard) 
-    }
+    for(var i = 0; i < 20; i++) {
+      if(e.target.className === `card${i}`) {
+        clueContainer.classList.remove('hidden')
+        clueCard.innerHTML = `${gameQuestions[`${i}`].question}` 
+
+      }
+    } 
+    console.log(clueCard)
   },
 
   domGetAnswer(e) {
     if(e.target.className === 'answer-button') { 
       console.log(answerInput.value)
     }
-  }
+  },
 } 
 
 if (typeof module !== 'undefined') {

@@ -10,12 +10,15 @@ let gameQuestions = [];
 let randomCategoryIds = [];
 let pointCards = document.querySelector('.point-card-container')
 let answerInput = document.querySelector('.answer-input')
-let answerButton = document.querySelector('.answer-button')
+let answerButton = document.querySelector('.answer-button');
+let card = []
+let clueCard = document.querySelector('.card-question')
+let clueContainer = document.querySelector('.clue-container')
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 
 pointCards.addEventListener("click", domUpdates.domClueCard)
-document.querySelector('.display-card').addEventListener("click", domUpdates.domGetAnswer)
+answerButton.addEventListener("click", domUpdates.domGetAnswer)
 // document.querySelector(".answerthing").addEventListener("click", domUpdates.domGetAnswer)
 
 const initialize = () => {
