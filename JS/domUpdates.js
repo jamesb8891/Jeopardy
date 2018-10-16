@@ -33,6 +33,27 @@ const domUpdates = {
     document.querySelector('.card3d').innerText = gameQuestions[17].pointValue;
     document.querySelector('.card4d').innerText = gameQuestions[18].pointValue;
     document.querySelector('.card5d').innerText = gameQuestions[19].pointValue;
+  }, 
+  
+  domClueCard(e){
+    if(e.target.className === 'card1a') {
+      var clueCard = document.createElement('section')
+      clueCard.className="clue-container"
+      clueCard.innerHTML = `
+        <section class="display-card clueCard">
+          <p class="card-question">${gameQuestions[0].question}</p>
+          <p> Answer <input class="answer-input" placeholder="Enter Your Answer" type="text"></p>
+          <button class="answer-button">Enter</button>
+        </section>`
+      document.querySelector('HEADER').append(clueCard)
+      console.log(clueCard) 
+    }
+  },
+
+  domGetAnswer(e) {
+    if(e.target.className === 'answer-button') { 
+      console.log(answerInput.value)
+    }
   }
 } 
 
