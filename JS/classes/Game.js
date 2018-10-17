@@ -2,7 +2,8 @@ class Game {
   constructor(gameState) {
     this.gameState = gameState;
     this.round = 1;
-    this.players = ['player1', 'player2', 'player3'];
+    this.players = [];
+    this.turnCounter = 1
   }
   
   advanceRound() {
@@ -59,6 +60,51 @@ class Game {
       return obj.categoryId;
     });
   };
+
+  turnAssignment() {
+    this.turnCounter++
+    if(this.turnCounter === 4) {
+      this.turnCounter = 1
+    }
+    console.log('turn :', this.turnCounter)
+  }
+
+  increaseScore() {
+    if(this.turnCounter === 1) {
+      let newScore = this.players[0].score += matchedClue.pointValue;
+      document.querySelector('.player1-score').innerText = newScore;
+    }
+    if(this.turnCounter === 2) {
+      let newScore = this.players[1].score += matchedClue.pointValue
+      document.querySelector('.player2-score')
+    }
+    if(this.turnCounter === 3) {
+      let newScore = this.players[2].score += matchedClue.pointValue
+      document.querySelector('.player3-score').innerText = newScore
+    }
+          console.log('player2 :', player2.score)
+          console.log('player3 :', player3.score)
+  }
+
+  decreaseScore() {
+    if(this.turnCounter === 1) {
+      let newScore = this.players[0].score -= matchedClue.pointValue;
+      document.querySelector('.player1-score').innerText = newScore
+    }
+    if(this.turnCounter === 2) {
+      let newScore = this.players[1].score -= matchedClue.pointValue
+      document.querySelector('.player2-score').innerText = newScore
+    }
+    if(this.turnCounter === 3) {
+      let newScore = this.players[2].score -= matchedClue.pointValue
+      document.querySelector('.player3-score').innerText = newScore
+    }
+          console.log('player1 :', player1.score)
+          console.log('player2 :', player2.score)
+          console.log('player3 :', player3.score)
+  }
+
+
 
 
   // declareWinner()

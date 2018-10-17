@@ -158,6 +158,12 @@ h1 {
   display: none
 }
 
+/*.disable:hover {
+  background: black;
+  color: transparent;
+  cursor: default;
+}*/
+
 
 
 
