@@ -53,7 +53,8 @@ header {
 }
 
 /*start-menu*/
-.start-menu, .clueCard {
+.start-menu,
+.clueCard {
   height: 660px;
   padding: 20px;
   width: 1100px;
@@ -62,8 +63,9 @@ header {
   border-radius: 55px;
 }
 
-.start-menu-container, .clue-container{
-  margin: 15px 85px 35px;
+.start-menu-container,
+.clue-container {
+  margin: 0px 85px 35px;
   align-content: center;
   justify-content: center;
   display: flex;
@@ -78,19 +80,16 @@ header {
 }
 
 .player-name-input::placeholder {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 h1 {
   align-self: flex-end;
   color: #ffffff;
   font-size: 1.5em;
-  text-shadow: 
-  -1px -1px 0 rgba(51, 51, 51),
-   1px -1px 0 rgba(51, 51, 51),
-  -1px 1px 0 rgba(51, 51, 51),
-   1px 1px 0 rgba(51, 51, 51),
-  -4px 5px rgba(51, 51, 51, 0.4);
+  text-shadow: -1px -1px 0 rgba(51, 51, 51), 1px -1px 0 rgba(51, 51, 51),
+    -1px 1px 0 rgba(51, 51, 51), 1px 1px 0 rgba(51, 51, 51),
+    -4px 5px rgba(51, 51, 51, 0.4);
 }
 
 .start-button {
@@ -113,11 +112,8 @@ h1 {
 .game-setup-text,
 .how-to-play-title {
   font-size: 2.2em;
-  text-shadow: 
-  -1px -1px 0 rgba(51, 51, 51),
-   1px -1px 0 rgba(51, 51, 51),
-    -1px 1px 0 rgba(51, 51, 51),
-     1px 1px 0 rgba(51, 51, 51),
+  text-shadow: -1px -1px 0 rgba(51, 51, 51), 1px -1px 0 rgba(51, 51, 51),
+    -1px 1px 0 rgba(51, 51, 51), 1px 1px 0 rgba(51, 51, 51),
     -4px 5px rgba(51, 51, 51, 0.4);
 }
 
@@ -126,7 +122,7 @@ h1 {
 }
 
 .how-to-play-text {
-  font-size: .9em;
+  font-size: 0.9em;
   width: 750px;
   text-align: center;
   line-height: 1.4;
@@ -155,7 +151,7 @@ h1 {
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
 /*.disable:hover {
@@ -163,9 +159,3 @@ h1 {
   color: transparent;
   cursor: default;
 }*/
-
-
-
-
-
-
