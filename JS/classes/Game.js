@@ -45,8 +45,10 @@ class Game {
 
   updateCategoryId(){
     var mappedGameQuestions = Object.values(gameQuestions);
+    console.log(mappedGameQuestions)
     gameQuestions = mappedGameQuestions.map((question) => {
       Object.keys(data.categories).forEach((category) => {
+        console.log(question)
         if (question.categoryId === data.categories[category]) {
           question.categoryId = category
             .replace(/([A-U])/g, " $1")
@@ -104,18 +106,19 @@ class Game {
       this.round = 2;
       this.questionCounter = 0;
       gameQuestions = [];
-      randomCategoryIds = []
-      console.log(gameQuestions)
-      console.log(this.round)
+      randomCategoryIds = [];
+      card = [];
       this.recursiveCall();
       this.filterQuestions();
       this.retrieveCategory(0);
       this.retrieveCategory(1);
       this.retrieveCategory(2);
       this.retrieveCategory(3);
+      this.updateCategoryId();
+      console.log(gameQuestions);
+      console.log(this.round);
       domUpdates.domCategories();
       domUpdates.domClues();
-      this.updateCategoryId();
     }
   }
 

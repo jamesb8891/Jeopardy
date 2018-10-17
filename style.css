@@ -50,6 +50,7 @@ header {
   height: 70px;
   justify-content: space-evenly;
   width: 130px;
+  border: #00c8e7 1px solid;
 }
 
 /*start-menu*/
@@ -92,7 +93,8 @@ h1 {
     -4px 5px rgba(51, 51, 51, 0.4);
 }
 
-.start-button {
+.start-button,
+.answer-button {
   border-radius: 15px;
   background-color: #18cbea;
   border: none;
@@ -104,13 +106,15 @@ h1 {
   width: 180px;
 }
 
-.start-button:hover {
+.start-button:hover, 
+.answer-button:hover {
   cursor: pointer;
   filter: brightness(140%);
 }
 
 .game-setup-text,
-.how-to-play-title {
+.how-to-play-title,
+.card-question {
   font-size: 2.2em;
   text-shadow: -1px -1px 0 rgba(51, 51, 51), 1px -1px 0 rgba(51, 51, 51),
     -1px 1px 0 rgba(51, 51, 51), 1px 1px 0 rgba(51, 51, 51),
@@ -119,6 +123,15 @@ h1 {
 
 .how-to-play-title {
   font-size: 1.8em;
+}
+
+.card-question {
+  font-size: 1.5em;
+  margin: 20px 150px;
+}
+
+.answer-input {
+  width: 300px;
 }
 
 .how-to-play-text {
@@ -153,9 +166,3 @@ h1 {
 .hidden {
   display: none;
 }
-
-/*.disable:hover {
-  background: black;
-  color: transparent;
-  cursor: default;
-}*/
