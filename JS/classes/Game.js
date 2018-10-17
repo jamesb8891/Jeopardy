@@ -12,7 +12,7 @@ class Game {
   }
 
   generateRandomCategoryIds(){
-    const randomNumber = Math.floor(Math.random() * 10 + 1);
+    const randomNumber = Math.floor(Math.random() * 9 + 1);
     if (!randomCategoryIds.includes(randomNumber)) {
       randomCategoryIds.push(randomNumber);
       this.recursiveCall();
@@ -39,6 +39,7 @@ class Game {
   retrieveCategory(category){
     for (var pointValue = 100; pointValue < 501; pointValue += 100) {
       var eachCategory = this.filterQuestions(randomCategoryIds[category], pointValue);
+      console.log(eachCategory)
       if(this.round === 1) {
         gameQuestions.push(eachCategory);
       }
@@ -51,7 +52,6 @@ class Game {
   updateCategoryId(){
     if(this.round === 1) {
       var mappedGameQuestions = Object.values(gameQuestions);
-      console.log(mappedGameQuestions)
       gameQuestions = mappedGameQuestions.map((question) => {
         Object.keys(data.categories).forEach((category) => {
           if (question.categoryId === data.categories[category]) {

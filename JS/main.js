@@ -9,16 +9,16 @@ var category4 = document.querySelector('.category4');
 let gameQuestions = [];
 let newGameQuestions = [];
 let randomCategoryIds = [];
-let pointCards = document.querySelector('.point-card-container')
-let answerInput = document.querySelector('.answer-input')
+let pointCards = document.querySelector('.point-card-container');
+let answerInput = document.querySelector('.answer-input');
 let answerButton = document.querySelector('.answer-button');
-let card = []
-let clueCard = document.querySelector('.card-question')
-let clueContainer = document.querySelector('.clue-container')
+let card = [];
+let clueCard = document.querySelector('.card-question');
+let clueContainer = document.querySelector('.clue-container');
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
-pointCards.addEventListener("click", domUpdates.domClueCard)
-answerButton.addEventListener("click", domUpdates.checkAnswer)
+pointCards.addEventListener("click", domUpdates.domClueCard);
+answerButton.addEventListener("click", domUpdates.checkAnswer);
 
 const initialize = () => {
   game = new Game;

@@ -39,13 +39,13 @@ const domUpdates = {
   domClueCard(e) {
     for (var i = 0; i < 20; i++) {
       if (e.target.className === `card${i}`) {
-        e.target.parentElement.classList.add("hidden");
+        e.target.parentElement.classList.toggle("hidden");
         clueContainer.classList.remove("hidden");
         if(game.round === 1) {
           clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;  
         }
         if(game.round === 2) {
-          // e.target.parentElement.classList.remove("hidden");
+          // e.target.classList.remove("hidden");
           clueCard.innerHTML = `${newGameQuestions[`${i}`].question}`;
         }
       }
@@ -56,15 +56,22 @@ const domUpdates = {
     answerInput.value = "";
   },
 
-  ///add if for round 2
-
   checkAnswer() {
     domUpdates.clearInput();
-    matchedClue = gameQuestions.find(clue => {
-      return (
-        clue.question === document.querySelector(".card-question").innerText
-      );
-    });
+    if (game.round === 1) {
+      matchedClue = gameQuestions.find(clue => {
+        return (
+          clue.question === document.querySelector(".card-question").innerText
+        );
+      });
+    }
+    if (game.round === 2) {
+      matchedClue = newGameQuestions.find(clue => {
+        return (
+          clue.question === document.querySelector(".card-question").innerText
+        );
+      });
+    }
     if (matchedClue.answer === answerInput.value) {
       game.increaseScore();
     } else {
