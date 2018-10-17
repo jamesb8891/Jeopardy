@@ -20,14 +20,12 @@ const domUpdates = {
       card[i] = document.querySelector(`.card${i}`).innerText =
         gameQuestions[`${i}`].pointValue;
     }
-    i = i;
   },
 
   domClueCard(e) {
     for (var i = 0; i < 20; i++) {
       if (e.target.className === `card${i}`) {
         e.target.parentElement.remove();
-        // e.target.parentElement.classList.add('disable')
         clueContainer.classList.remove("hidden");
         clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;
       }
@@ -47,14 +45,15 @@ const domUpdates = {
       );
     });
     if (matchedClue.answer === answerInput.value) {
-      console.log("correct");
       game.increaseScore();
     } else {
-      console.log("fail poop on you");
       game.decreaseScore();
     }
     clueContainer.classList.add("hidden");
     game.turnAssignment();
+    game.questionCounter++;
+    console.log('questionCounter:', game.questionCounter);
+    game.roundChecker();
   }
 };
 
