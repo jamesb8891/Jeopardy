@@ -551,7 +551,7 @@ const data = {
       categoryId: 5
     },
     {
-      question: "My wink is nearest the pot.  I've won the squidge-off!",
+      question: "My wink is nearest the pot. I've won the squidge-off!",
       answer: "tiddlywinks",
       pointValue: 500,
       categoryId: 5

@@ -22,6 +22,8 @@ const domUpdates = {
   domClueCard(e){
     for(var i = 0; i < 20; i++) {
       if(e.target.className === `card${i}`) {
+        e.target.parentElement.remove()
+        // e.target.parentElement.classList.add('disable')
         clueContainer.classList.remove('hidden')
         clueCard.innerHTML = `${gameQuestions[`${i}`].question}` 
 
@@ -30,16 +32,25 @@ const domUpdates = {
     console.log(clueCard)
   },
 
-  domGetAnswer() {
-    let matchedClue = gameQuestions.find((clue) => {
+  clearInput() {
+    answerInput.value =''
+  },
+
+  checkAnswer() {
+    domUpdates.clearInput();
+    matchedClue = gameQuestions.find((clue) => {
       return clue.question === document.querySelector('.card-question').innerText
     })
     if (matchedClue.answer === answerInput.value){
       console.log('correct')
+      game.increaseScore()
     } else {
       console.log('fail poop on you')
+      game.decreaseScore()
     }
-  },
+    clueContainer.classList.add('hidden')
+    game.turnAssignment();
+  }
 } 
 
 if (typeof module !== 'undefined') {
