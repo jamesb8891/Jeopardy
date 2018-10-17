@@ -25,12 +25,11 @@ const domUpdates = {
   domClueCard(e) {
     for (var i = 0; i < 20; i++) {
       if (e.target.className === `card${i}`) {
-        e.target.parentElement.remove();
+        e.target.parentElement.classList.add("hidden");
         clueContainer.classList.remove("hidden");
         clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;
       }
     }
-    console.log(clueCard);
   },
 
   clearInput() {
@@ -52,9 +51,15 @@ const domUpdates = {
     clueContainer.classList.add("hidden");
     game.turnAssignment();
     game.questionCounter++;
-    console.log('questionCounter:', game.questionCounter);
     game.roundChecker();
-  }
+  },
+
+  resetRound() {
+    let allPointCards = document.querySelectorAll(".hidden-cards")
+    allPointCards.forEach((card) => {
+      card.classList.remove("hidden");
+    })
+  },
 };
 
 if (typeof module !== "undefined") {

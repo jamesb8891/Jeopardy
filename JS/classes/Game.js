@@ -45,10 +45,8 @@ class Game {
 
   updateCategoryId(){
     var mappedGameQuestions = Object.values(gameQuestions);
-    console.log(mappedGameQuestions)
     gameQuestions = mappedGameQuestions.map((question) => {
       Object.keys(data.categories).forEach((category) => {
-        console.log(question)
         if (question.categoryId === data.categories[category]) {
           question.categoryId = category
             .replace(/([A-U])/g, " $1")
@@ -117,6 +115,7 @@ class Game {
       this.updateCategoryId();
       console.log(gameQuestions);
       console.log(this.round);
+      domUpdates.resetRound()
       domUpdates.domCategories();
       domUpdates.domClues();
     }
