@@ -7,6 +7,7 @@ var category2 = document.querySelector('.category2');
 var category3 = document.querySelector('.category3');
 var category4 = document.querySelector('.category4');
 let gameQuestions = [];
+let newGameQuestions = [];
 let randomCategoryIds = [];
 let pointCards = document.querySelector('.point-card-container')
 let answerInput = document.querySelector('.answer-input')

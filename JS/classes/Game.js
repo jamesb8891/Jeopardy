@@ -39,29 +39,55 @@ class Game {
   retrieveCategory(category){
     for (var pointValue = 100; pointValue < 501; pointValue += 100) {
       var eachCategory = this.filterQuestions(randomCategoryIds[category], pointValue);
-      gameQuestions.push(eachCategory);
+      if(this.round === 1) {
+        gameQuestions.push(eachCategory);
+      }
+      if(this.round === 2) {
+        newGameQuestions.push(eachCategory);
+      }
     }
   };
 
   updateCategoryId(){
-    var mappedGameQuestions = Object.values(gameQuestions);
-    console.log(mappedGameQuestions)
-    gameQuestions = mappedGameQuestions.map((question) => {
-      Object.keys(data.categories).forEach((category) => {
-        console.log(question)
-        if (question.categoryId === data.categories[category]) {
-          question.categoryId = category
-            .replace(/([A-U])/g, " $1")
-            .replace(/^./, function(string) {
-              return string.toUpperCase();
-            });
-        }
+    if(this.round === 1) {
+      var mappedGameQuestions = Object.values(gameQuestions);
+      console.log(mappedGameQuestions)
+      gameQuestions = mappedGameQuestions.map((question) => {
+        Object.keys(data.categories).forEach((category) => {
+          if (question.categoryId === data.categories[category]) {
+            question.categoryId = category
+              .replace(/([A-U])/g, " $1")
+              .replace(/^./, function(string) {
+                return string.toUpperCase();
+              });
+          }
+        });
+        return question;
       });
-      return question;
-    });
-    gameQuestions.map(obj => {
-      return obj.categoryId;
-    });
+      gameQuestions.map(obj => {
+        return obj.categoryId;
+      });
+    }
+     if(this.round === 2) {
+      var mappedGameQuestions = Object.values(newGameQuestions);
+      console.log(mappedGameQuestions)
+      newGameQuestions = mappedGameQuestions.map((question) => {
+        Object.keys(data.categories).forEach((category) => {
+          if (question.categoryId === data.categories[category]) {
+            question.categoryId = category
+              .replace(/([A-U])/g, " $1")
+              .replace(/^./, function(string) {
+                return string.toUpperCase();
+              });
+          }
+        });
+        return question;
+      });
+      newGameQuestions.map(obj => {
+        return obj.categoryId;
+      });
+    }
+
   };
 
   turnAssignment() {
@@ -105,7 +131,6 @@ class Game {
     if(this.questionCounter === 20) {
       this.round = 2;
       this.questionCounter = 0;
-      gameQuestions = [];
       randomCategoryIds = [];
       card = [];
       this.recursiveCall();
@@ -115,7 +140,7 @@ class Game {
       this.retrieveCategory(2);
       this.retrieveCategory(3);
       this.updateCategoryId();
-      console.log(gameQuestions);
+      console.log(newGameQuestions);
       console.log(this.round);
       domUpdates.domCategories();
       domUpdates.domClues();

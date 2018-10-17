@@ -9,33 +9,54 @@ const domUpdates = {
     document.querySelector(".start-menu").remove();
   },
   domCategories() {
-    category1.innerText = gameQuestions[0].categoryId;
-    category2.innerText = gameQuestions[5].categoryId;
-    category3.innerText = gameQuestions[11].categoryId;
-    category4.innerText = gameQuestions[16].categoryId;
+    if (game.round === 1) {
+      category1.innerText = gameQuestions[0].categoryId;
+      category2.innerText = gameQuestions[5].categoryId;
+      category3.innerText = gameQuestions[10].categoryId;
+      category4.innerText = gameQuestions[15].categoryId;
+    }
+    if (game.round === 2) {
+      category1.innerText = newGameQuestions[0].categoryId;
+      category2.innerText = newGameQuestions[5].categoryId;
+      category3.innerText = newGameQuestions[10].categoryId;
+      category4.innerText = newGameQuestions[15].categoryId;
+    }
   },
 
   domClues() {
     for (var i = 0; i < 20; i++) {
-      card[i] = document.querySelector(`.card${i}`).innerText =
+      if (game.round === 1) {
+        card[i] = document.querySelector(`.card${i}`).innerText =
         gameQuestions[`${i}`].pointValue;
+      }
+      if(game.round === 2) {
+        card[i] = document.querySelector(`.card${i}`).innerText =
+        newGameQuestions[`${i}`].pointValue;
+      }
     }
   },
 
   domClueCard(e) {
     for (var i = 0; i < 20; i++) {
       if (e.target.className === `card${i}`) {
-        e.target.parentElement.remove();
+        e.target.parentElement.classList.add("hidden");
         clueContainer.classList.remove("hidden");
-        clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;
+        if(game.round === 1) {
+          clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;  
+        }
+        if(game.round === 2) {
+          // e.target.parentElement.classList.remove("hidden");
+          clueCard.innerHTML = `${newGameQuestions[`${i}`].question}`;
+        }
       }
     }
-    console.log(clueCard);
   },
 
   clearInput() {
     answerInput.value = "";
   },
+
+  ///add if for round 2
 
   checkAnswer() {
     domUpdates.clearInput();
@@ -52,7 +73,6 @@ const domUpdates = {
     clueContainer.classList.add("hidden");
     game.turnAssignment();
     game.questionCounter++;
-    console.log('questionCounter:', game.questionCounter);
     game.roundChecker();
   }
 };
