@@ -16,10 +16,8 @@ let clueCard = document.querySelector('.card-question')
 let clueContainer = document.querySelector('.clue-container')
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
-
 pointCards.addEventListener("click", domUpdates.domClueCard)
 answerButton.addEventListener("click", domUpdates.checkAnswer)
-
 
 const initialize = () => {
   game = new Game;
@@ -38,7 +36,6 @@ const addPlayers = () => {
   player1 = new Player('player1');
   player2 = new Player('player2');
   player3 = new Player('player3');
-  player1.initializeTurn();
   game.players.push(player1)
   game.players.push(player2)
   game.players.push(player3)

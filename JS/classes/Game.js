@@ -3,7 +3,8 @@ class Game {
     this.gameState = gameState;
     this.round = 1;
     this.players = [];
-    this.turnCounter = 1
+    this.turnCounter = 1;
+    this.questionCounter = 0;
   }
   
   advanceRound() {
@@ -66,7 +67,6 @@ class Game {
     if(this.turnCounter === 4) {
       this.turnCounter = 1
     }
-    console.log('turn :', this.turnCounter)
   }
 
   increaseScore() {
@@ -82,8 +82,6 @@ class Game {
       let newScore = this.players[2].score += matchedClue.pointValue
       document.querySelector('.player3-score').innerText = newScore
     }
-          console.log('player2 :', player2.score)
-          console.log('player3 :', player3.score)
   }
 
   decreaseScore() {
@@ -99,9 +97,26 @@ class Game {
       let newScore = this.players[2].score -= matchedClue.pointValue
       document.querySelector('.player3-score').innerText = newScore
     }
-          console.log('player1 :', player1.score)
-          console.log('player2 :', player2.score)
-          console.log('player3 :', player3.score)
+  }
+
+  roundChecker() {
+    if(this.questionCounter === 20) {
+      this.round = 2;
+      this.questionCounter = 0;
+      gameQuestions = [];
+      randomCategoryIds = []
+      console.log(gameQuestions)
+      console.log(this.round)
+      this.recursiveCall();
+      this.filterQuestions();
+      this.retrieveCategory(0);
+      this.retrieveCategory(1);
+      this.retrieveCategory(2);
+      this.retrieveCategory(3);
+      domUpdates.domCategories();
+      domUpdates.domClues();
+      this.updateCategoryId();
+    }
   }
 
 
