@@ -2,10 +2,7 @@ var playerOneInput = document.querySelector('.player-one-input');
 var playerTwoInput = document.querySelector('.player-two-input');
 var playerThreeInput = document.querySelector('.player-three-input');
 var startButton = document.querySelector('.start-button');
-var category1 = document.querySelector('.category1');
-var category2 = document.querySelector('.category2');
-var category3 = document.querySelector('.category3');
-var category4 = document.querySelector('.category4');
+var categoryArr = [];
 let gameQuestions = [];
 let randomCategoryIds = [];
 let pointCards = document.querySelector('.point-card-container')
@@ -14,14 +11,18 @@ let answerButton = document.querySelector('.answer-button');
 let card = []
 let clueCard = document.querySelector('.card-question')
 let clueContainer = document.querySelector('.clue-container')
-// let finalQuestionWagerSubmit = document.querySelector('.final-question-wager-submit')
-// let finalQuestionAnswerSubmit = document.querySelector('.final-question-answer-submit')
+let finalQuestionWagerSubmit = document.querySelector('.final-question-wager-submit')
+let finalQuestionAnswerSubmit = document.querySelector('.final-question-answer-submit')
+var category1 = document.querySelector('.category1');
+var category2 = document.querySelector('.category2');
+var category3 = document.querySelector('.category3');
+var category4 = document.querySelector('.category4');
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 pointCards.addEventListener("click", domUpdates.domClueCard)
 answerButton.addEventListener("click", domUpdates.checkAnswer)
-// finalQuestionWagerSubmit.addEventListener("click", domUpdates.checkWager)
-// finalQuestionAnswerSubmit.addEventListener("click", domUpdates.checkFinalAnswer)
+finalQuestionWagerSubmit.addEventListener("click", domUpdates.checkWager)
+finalQuestionAnswerSubmit.addEventListener("click", domUpdates.checkFinalAnswer)
 
 
 const initialize = () => {
@@ -32,8 +33,8 @@ const initialize = () => {
   game.retrieveCategory(1);
   game.retrieveCategory(2);
   game.retrieveCategory(3);
-  game.updateCategoryId();
-  domUpdates.domCategories();
+  domUpdates.domCategories(-5);
+  domUpdates.changeCat(-1);
   domUpdates.domClues();
 }
 

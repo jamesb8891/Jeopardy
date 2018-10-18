@@ -8,11 +8,53 @@ const domUpdates = {
       playerThreeInput.value || "Player 3";
     document.querySelector(".start-menu").remove();
   },
-  domCategories() {
-    category1.innerText = gameQuestions[0].categoryId;
-    category2.innerText = gameQuestions[5].categoryId;
-    category3.innerText = gameQuestions[11].categoryId;
-    category4.innerText = gameQuestions[16].categoryId;
+
+  domCategories(index) {
+    for(var i = 1; i < 5; i++) {
+      index += 5;
+      console.log('index:', index)  
+      console.log('cat:',gameQuestions[index].categoryId)
+      switch (gameQuestions[index].categoryId) {
+        case 1:
+          categoryArr.push('US History')
+          break;
+        case 2:
+          categoryArr.push('Life Sciences')
+          break;
+        case 3:
+          categoryArr.push('Public Health')
+          break;
+        case 4:
+          categoryArr.push('Education Jargon')
+          break;
+        case 5:
+          categoryArr.push('Board Game')
+          break;
+        case 6:
+          categoryArr.push('American Literature')
+          break;
+        case 7:
+          categoryArr.push('Biography')
+          break;
+        case 8:
+          categoryArr.push('American Cities')
+          break;
+        case 9:
+          categoryArr.push('Food')
+          break;
+        case 10:
+         categoryArr.push('Cable TV')
+          break;
+    }
+  }
+},
+
+  changeCat(index){
+    console.log(categoryArr)
+    for (var i = 1; i < 5; i++) {
+      index +=1
+        categoryArr[index] = document.querySelector(`.category${i}`).innerText = categoryArr[`${index}`];
+      }
   },
 
   domClues() {
@@ -52,7 +94,7 @@ const domUpdates = {
     game.turnAssignment();
     game.questionCounter++;
     game.setRound2();
-    // game.setRound3();
+    game.setRound3();
   },
 
   resetRound() {
@@ -66,26 +108,26 @@ const domUpdates = {
     if(game.round === 2) {
       document.querySelector('.round-number').innerText = 2 
     }
-    // if(game.round === 3) {
-    //   document.querySelector('.round-number').innerText = 3 
+    if(game.round === 3) {
+      document.querySelector('.round-number').innerText = 3 
 
-    // }
+    }
   },
 
-  // finalQuestion() {
-  //   document.querySelector('.final-question').classList.remove('hidden');
-  // },
+  finalQuestion() {
+    document.querySelector('.final-question-wager').classList.remove('hidden');
+  },
 
-  // checkWager(){
-  //   // wager needs to be more than $5,
-  //   // player must have enough money
-  // },
+  checkWager(){
+    // wager needs to be more than $5,
+    // player must have enough money
+  },
 
-  // checkFinalAnswers() {
-  //   // if question is right, wager is added to score
-  //   // if question is wrong, wager is subtracted from score
-  //   // points have to go to the right player
-  // }
+  checkFinalAnswers() {
+    // if question is right, wager is added to score
+    // if question is wrong, wager is subtracted from score
+    // points have to go to the right player
+  }
 };
 
 if (typeof module !== "undefined") {
