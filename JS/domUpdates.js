@@ -60,6 +60,10 @@ const domUpdates = {
       card.classList.remove("hidden");
     })
   },
+
+  displayRound() {
+    document.querySelector('.round-number').innerText = 2
+  }
 };
 
 if (typeof module !== "undefined") {
