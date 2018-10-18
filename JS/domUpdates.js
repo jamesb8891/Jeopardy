@@ -51,7 +51,8 @@ const domUpdates = {
     clueContainer.classList.add("hidden");
     game.turnAssignment();
     game.questionCounter++;
-    game.roundChecker();
+    game.setRound2();
+    // game.setRound3();
   },
 
   resetRound() {
@@ -62,8 +63,29 @@ const domUpdates = {
   },
 
   displayRound() {
-    document.querySelector('.round-number').innerText = 2
-  }
+    if(game.round === 2) {
+      document.querySelector('.round-number').innerText = 2 
+    }
+    // if(game.round === 3) {
+    //   document.querySelector('.round-number').innerText = 3 
+
+    // }
+  },
+
+  // finalQuestion() {
+  //   document.querySelector('.final-question').classList.remove('hidden');
+  // },
+
+  // checkWager(){
+  //   // wager needs to be more than $5,
+  //   // player must have enough money
+  // },
+
+  // checkFinalAnswers() {
+  //   // if question is right, wager is added to score
+  //   // if question is wrong, wager is subtracted from score
+  //   // points have to go to the right player
+  // }
 };
 
 if (typeof module !== "undefined") {

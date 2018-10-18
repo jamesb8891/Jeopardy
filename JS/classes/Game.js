@@ -99,10 +99,9 @@ class Game {
     }
   }
 
-  roundChecker() {
+  setRound2() {
     if(this.questionCounter === 20) {
       this.round = 2;
-      this.questionCounter = 0;
       gameQuestions = [];
       randomCategoryIds = [];
       card = [];
@@ -122,19 +121,26 @@ class Game {
     }
   }
 
+  // setRound3() {
+  //   if(this.questionCounter === 40) {
+  //     this.round = 3;
+  //     gameQuestions = [];
+  //     randomCategoryIds = [];
+  //     card = [];
+  //     this.recursiveCall();
+  //     this.filterQuestions();
+  //     this.retrieveCategory(0);
+  //     domUpdates.displayRound();
+  //     domUpdates.finalQuestion();
+  //   }
+
+  // }
+
   doublePoints() {
     gameQuestions.map((question) => {
       question.pointValue *= 2
     })
   }
-
-
-
-
-  // declareWinner()
-  // start()
-  // reset()
-  // advanceRound()
 
 }
 

@@ -14,10 +14,15 @@ let answerButton = document.querySelector('.answer-button');
 let card = []
 let clueCard = document.querySelector('.card-question')
 let clueContainer = document.querySelector('.clue-container')
+// let finalQuestionWagerSubmit = document.querySelector('.final-question-wager-submit')
+// let finalQuestionAnswerSubmit = document.querySelector('.final-question-answer-submit')
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 pointCards.addEventListener("click", domUpdates.domClueCard)
 answerButton.addEventListener("click", domUpdates.checkAnswer)
+// finalQuestionWagerSubmit.addEventListener("click", domUpdates.checkWager)
+// finalQuestionAnswerSubmit.addEventListener("click", domUpdates.checkFinalAnswer)
+
 
 const initialize = () => {
   game = new Game;
