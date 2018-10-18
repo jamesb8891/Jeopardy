@@ -43,25 +43,6 @@ class Game {
     }
   };
 
-  updateCategoryId(){
-    var mappedGameQuestions = Object.values(gameQuestions);
-    gameQuestions = mappedGameQuestions.map((question) => {
-      Object.keys(data.categories).forEach((category) => {
-        if (question.categoryId === data.categories[category]) {
-          question.categoryId = category
-            .replace(/([A-U])/g, " $1")
-            .replace(/^./, function(string) {
-              return string.toUpperCase();
-            });
-        }
-      });
-      return question;
-    });
-    gameQuestions.map(obj => {
-      return obj.categoryId;
-    });
-  };
-
   turnAssignment() {
     this.turnCounter++
     if(this.turnCounter === 4) {
@@ -99,27 +80,42 @@ class Game {
     }
   }
 
-  roundChecker() {
+  setRound2() {
     if(this.questionCounter === 20) {
       this.round = 2;
-      this.questionCounter = 0;
       gameQuestions = [];
       randomCategoryIds = [];
       card = [];
+      categoryArr = [];
       this.recursiveCall();
       this.filterQuestions();
       this.retrieveCategory(0);
       this.retrieveCategory(1);
       this.retrieveCategory(2);
       this.retrieveCategory(3);
-      this.updateCategoryId();
       domUpdates.resetRound()
       console.log(gameQuestions);
-      domUpdates.domCategories();
+      domUpdates.domCategories(-5);
+      domUpdates.changeCat(-1);
       this.doublePoints()
       domUpdates.domClues();
       domUpdates.displayRound();
     }
+  }
+
+  setRound3() {
+    if(this.questionCounter === 40) {
+      this.round = 3;
+      gameQuestions = [];
+      randomCategoryIds = [];
+      card = [];
+      this.recursiveCall();
+      this.filterQuestions();
+      this.retrieveCategory(0);
+      domUpdates.displayRound();
+      domUpdates.finalQuestion();
+    }
+
   }
 
   doublePoints() {
@@ -127,14 +123,6 @@ class Game {
       question.pointValue *= 2
     })
   }
-
-
-
-
-  // declareWinner()
-  // start()
-  // reset()
-  // advanceRound()
 
 }
 
