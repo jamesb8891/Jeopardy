@@ -113,12 +113,19 @@ class Game {
       this.retrieveCategory(2);
       this.retrieveCategory(3);
       this.updateCategoryId();
-      console.log(gameQuestions);
-      console.log(this.round);
       domUpdates.resetRound()
+      console.log(gameQuestions);
       domUpdates.domCategories();
+      this.doublePoints()
       domUpdates.domClues();
+      domUpdates.displayRound();
     }
+  }
+
+  doublePoints() {
+    gameQuestions.map((question) => {
+      question.pointValue *= 2
+    })
   }
 
 
