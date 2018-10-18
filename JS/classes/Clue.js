@@ -11,9 +11,8 @@ class DailyDouble extends Clue {
   constructor(question, answer, pointValue, categoryId) {
     super(question, answer, pointValue, categoryId);
   }
-  // checkWager()
 }
 
-if (typeof module !== 'undefined') {
+if (typeof module !== "undefined") {
   module.exports = Clue;
 }

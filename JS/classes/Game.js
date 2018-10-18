@@ -6,26 +6,26 @@ class Game {
     this.turnCounter = 1;
     this.questionCounter = 0;
   }
-  
+
   advanceRound() {
-    return this.round++
+    return this.round++;
   }
 
-  generateRandomCategoryIds(){
+  generateRandomCategoryIds() {
     const randomNumber = Math.floor(Math.random() * 10 + 1);
     if (!randomCategoryIds.includes(randomNumber)) {
       randomCategoryIds.push(randomNumber);
       this.recursiveCall();
     }
-  };
+  }
 
-  recursiveCall(){
+  recursiveCall() {
     for (var i = 0; randomCategoryIds.length < 4; i++) {
       this.generateRandomCategoryIds();
     }
-  };
+  }
 
-  filterQuestions(randomCategoryIdNumber, pointValue){
+  filterQuestions(randomCategoryIdNumber, pointValue) {
     let filterCategory = data.clues.filter(clue => {
       return (
         clue.categoryId === randomCategoryIdNumber &&
@@ -34,54 +34,57 @@ class Game {
     });
     const randomIndex = Math.floor(Math.random() * filterCategory.length);
     return filterCategory[randomIndex];
-  };
+  }
 
-  retrieveCategory(category){
+  retrieveCategory(category) {
     for (var pointValue = 100; pointValue < 501; pointValue += 100) {
-      var eachCategory = this.filterQuestions(randomCategoryIds[category], pointValue);
+      var eachCategory = this.filterQuestions(
+        randomCategoryIds[category],
+        pointValue
+      );
       gameQuestions.push(eachCategory);
     }
-  };
+  }
 
   turnAssignment() {
-    this.turnCounter++
-    if(this.turnCounter === 4) {
-      this.turnCounter = 1
+    this.turnCounter++;
+    if (this.turnCounter === 4) {
+      this.turnCounter = 1;
     }
   }
 
   increaseScore() {
-    if(this.turnCounter === 1) {
-      let newScore = this.players[0].score += matchedClue.pointValue;
-      document.querySelector('.player1-score').innerText = newScore;
+    if (this.turnCounter === 1) {
+      let newScore = (this.players[0].score += matchedClue.pointValue);
+      document.querySelector(".player1-score").innerText = newScore;
     }
-    if(this.turnCounter === 2) {
-      let newScore = this.players[1].score += matchedClue.pointValue
-      document.querySelector('.player2-score')
+    if (this.turnCounter === 2) {
+      let newScore = (this.players[1].score += matchedClue.pointValue);
+      document.querySelector(".player2-score");
     }
-    if(this.turnCounter === 3) {
-      let newScore = this.players[2].score += matchedClue.pointValue
-      document.querySelector('.player3-score').innerText = newScore
+    if (this.turnCounter === 3) {
+      let newScore = (this.players[2].score += matchedClue.pointValue);
+      document.querySelector(".player3-score").innerText = newScore;
     }
   }
 
   decreaseScore() {
-    if(this.turnCounter === 1) {
-      let newScore = this.players[0].score -= matchedClue.pointValue;
-      document.querySelector('.player1-score').innerText = newScore
+    if (this.turnCounter === 1) {
+      let newScore = (this.players[0].score -= matchedClue.pointValue);
+      document.querySelector(".player1-score").innerText = newScore;
     }
-    if(this.turnCounter === 2) {
-      let newScore = this.players[1].score -= matchedClue.pointValue
-      document.querySelector('.player2-score').innerText = newScore
+    if (this.turnCounter === 2) {
+      let newScore = (this.players[1].score -= matchedClue.pointValue);
+      document.querySelector(".player2-score").innerText = newScore;
     }
-    if(this.turnCounter === 3) {
-      let newScore = this.players[2].score -= matchedClue.pointValue
-      document.querySelector('.player3-score').innerText = newScore
+    if (this.turnCounter === 3) {
+      let newScore = (this.players[2].score -= matchedClue.pointValue);
+      document.querySelector(".player3-score").innerText = newScore;
     }
   }
 
   setRound2() {
-    if(this.questionCounter === 20) {
+    if (this.questionCounter === 20) {
       this.round = 2;
       gameQuestions = [];
       randomCategoryIds = [];
@@ -93,18 +96,17 @@ class Game {
       this.retrieveCategory(1);
       this.retrieveCategory(2);
       this.retrieveCategory(3);
-      domUpdates.resetRound()
-      console.log(gameQuestions);
+      domUpdates.resetRound();
       domUpdates.domCategories(-5);
       domUpdates.changeCat(-1);
-      this.doublePoints()
+      this.doublePoints();
       domUpdates.domClues();
       domUpdates.displayRound();
     }
   }
 
   setRound3() {
-    if(this.questionCounter === 40) {
+    if (this.questionCounter === 40) {
       this.round = 3;
       gameQuestions = [];
       randomCategoryIds = [];
@@ -115,19 +117,15 @@ class Game {
       domUpdates.displayRound();
       domUpdates.finalQuestion();
     }
-
   }
 
   doublePoints() {
-    gameQuestions.map((question) => {
-      question.pointValue *= 2
-    })
+    gameQuestions.map(question => {
+      question.pointValue *= 2;
+    });
   }
-
 }
 
-
-if (typeof module !== 'undefined') {
+if (typeof module !== "undefined") {
   module.exports = Game;
 }
-
