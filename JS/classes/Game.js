@@ -8,7 +8,7 @@ class Game {
   }
 
   advanceRound() {
-    return this.round++;
+     return this.round++;
   }
 
   generateRandomCategoryIds() {
