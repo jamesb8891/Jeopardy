@@ -17,10 +17,7 @@ let finalQuestionWagerSubmit = document.querySelector(
 let finalQuestionAnswerSubmit = document.querySelector(
   ".final-question-answer-submit"
 );
-var category1 = document.querySelector(".category1");
-var category2 = document.querySelector(".category2");
-var category3 = document.querySelector(".category3");
-var category4 = document.querySelector(".category4");
+
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 pointCards.addEventListener("click", domUpdates.domClueCard);
