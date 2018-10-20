@@ -1,36 +1,22 @@
 var playerOneInput = document.querySelector(".player-one-input");
 var playerTwoInput = document.querySelector(".player-two-input");
 var playerThreeInput = document.querySelector(".player-three-input");
-var startButton = document.querySelector(".start-button");
-var categoryArr = [];
-let gameQuestions = [];
-let randomCategoryIds = [];
-let pointCards = document.querySelector(".point-card-container");
 let answerInput = document.querySelector(".answer-input");
-let answerButton = document.querySelector(".answer-button");
-let card = [];
-let clueCard = document.querySelector(".card-question");
-let clueContainer = document.querySelector(".clue-container");
-let finalQuestionWagerSubmit = document.querySelector(
-  ".final-question-wager-submit"
-);
-let finalQuestionAnswerSubmit = document.querySelector(
-  ".final-question-answer-submit"
-);
 let matchedClue;
 
 
-startButton.addEventListener("click", domUpdates.initializePlayers);
-pointCards.addEventListener("click", domUpdates.domClueCard);
-answerButton.addEventListener("click", domUpdates.runPlayers);
-finalQuestionWagerSubmit.addEventListener("click", domUpdates.checkWager);
-finalQuestionAnswerSubmit.addEventListener(
+document.querySelector(".start-button").addEventListener("click", domUpdates.initializePlayers);
+document.querySelector(".point-card-container").addEventListener("click", domUpdates.domClueCard);
+document.querySelector(".answer-button").addEventListener("click", domUpdates.runPlayers);
+document.querySelector(".final-question-wager-submit").addEventListener("click", domUpdates.checkWager);
+document.querySelector(".final-question-answer-submit").addEventListener(
   "click",
   domUpdates.checkFinalAnswer
 );
 
 const initialize = () => {
   game = new Game();
+  gameboard = new Gameboard();
   game.recursiveCall();
   game.filterQuestions();
   game.retrieveCategory(0);
@@ -54,4 +40,4 @@ const addPlayers = () => {
 
 initialize();
 addPlayers();
-console.log(gameQuestions)
+console.log(gameboard.gameQuestions)

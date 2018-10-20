@@ -12,36 +12,36 @@ const domUpdates = {
   domCategories(index) {
     for (var i = 1; i < 5; i++) {
       index += 5;
-      switch (gameQuestions[index].categoryId) {
+      switch (gameboard.gameQuestions[index].categoryId) {
         case 1:
-          categoryArr.push("US History");
+          gameboard.gameCategories.push("US History");
           break;
         case 2:
-          categoryArr.push("Life Sciences");
+          gameboard.gameCategories.push("Life Sciences");
           break;
         case 3:
-          categoryArr.push("Public Health");
+          gameboard.gameCategories.push("Public Health");
           break;
         case 4:
-          categoryArr.push("Education Jargon");
+          gameboard.gameCategories.push("Education Jargon");
           break;
         case 5:
-          categoryArr.push("Board Game");
+          gameboard.gameCategories.push("Board Game");
           break;
         case 6:
-          categoryArr.push("American Literature");
+          gameboard.gameCategories.push("American Literature");
           break;
         case 7:
-          categoryArr.push("Biography");
+          gameboard.gameCategories.push("Biography");
           break;
         case 8:
-          categoryArr.push("American Cities");
+          gameboard.gameCategories.push("American Cities");
           break;
         case 9:
-          categoryArr.push("Food");
+          gameboard.gameCategories.push("Food");
           break;
         case 10:
-          categoryArr.push("Cable TV");
+          gameboard.gameCategories.push("Cable TV");
           break;
       }
     }
@@ -50,15 +50,16 @@ const domUpdates = {
   changeCat(index) {
     for (var i = 1; i < 5; i++) {
       index += 1;
-      categoryArr[index] = document.querySelector(`.category${i}`).innerText =
-        categoryArr[`${index}`];
+      gameboard.gameCategories[index] = document.querySelector(`.category${i}`).innerText =
+        gameboard.gameCategories[`${index}`];
     }
   },
 
   renderClues() {
+    let card = [];
     for (var i = 0; i < 20; i++) {
       card[i] = document.querySelector(`.card${i}`).innerText =
-        gameQuestions[`${i}`].pointValue;
+        gameboard.gameQuestions[`${i}`].pointValue;
     }
   },
 
@@ -66,11 +67,15 @@ const domUpdates = {
     for (var i = 0; i < 20; i++) {
       if (e.target.className === `card${i}`) {
         e.target.parentElement.classList.add("hidden");
-        clueContainer.classList.remove("hidden");
-        currentClue = `${gameQuestions[`${i}`].question}`;
-        clueCard.innerHTML = currentClue
+        domUpdates.toggleClueContainer();
+        currentClue = `${gameboard.gameQuestions[`${i}`].question}`;
+        document.querySelector(".card-question").innerHTML = currentClue
       }
     }
+  },
+
+  toggleClueContainer() {
+    document.querySelector(".clue-container").classList.toggle("hidden")
   },
 
   clearInput() {
