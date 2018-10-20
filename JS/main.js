@@ -37,4 +37,3 @@ const addPlayers = () => {
 
 initialize();
 addPlayers();
-console.log(gameboard.gameQuestions)

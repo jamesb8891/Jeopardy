@@ -10,45 +10,6 @@ class Game {
      return this.round++;
   }
 
-  //move to gameboard??
-
-  // generateRandomCategoryIds() {
-  //   const randomNumber = Math.floor(Math.random() * 10 + 1);
-  //   if (!gameboard.randomCategoryIds.includes(randomNumber)) {
-  //     gameboard.randomCategoryIds.push(randomNumber);
-  //     this.recursiveCall();
-  //   }
-  // }
-
-  //move to gameboard??
-
-  // recursiveCall() {
-  //   for (var i = 0; gameboard.randomCategoryIds.length < 4; i++) {
-  //     this.generateRandomCategoryIds();
-  //   }
-  // }
-
-  // filterQuestions(randomCategoryIdNumber, pointValue) {
-  //   let filterQuestion = data.clues.filter(clue => {
-  //     return (
-  //       clue.categoryId === randomCategoryIdNumber &&
-  //       clue.pointValue === pointValue
-  //     );
-  //   });
-  //   const randomIndex = Math.floor(Math.random() * filterQuestion.length);
-  //   return filterQuestion[randomIndex];
-  // }
-
-  // retrieveCategory(category) {
-  //   for (var pointValue = 100; pointValue < 501; pointValue += 100) {
-  //     var eachClue = this.filterQuestions(
-  //       gameboard.randomCategoryIds[category],
-  //       pointValue
-  //     );
-  //     gameboard.gameQuestions.push(eachClue);
-  //   }
-  // }
-
   turnAssignment() {
     this.turnCounter++;
     if (this.turnCounter === 4) {
