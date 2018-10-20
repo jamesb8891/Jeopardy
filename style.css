@@ -142,6 +142,13 @@ h1 {
 }
 
 /*GAME BOARD*/
+.round-display {
+  background: rgba(224, 222, 229, 0.9);
+  color: #4c0e82;
+  border: #00c8e7 2px solid;
+  font-size: 1.7em; 
+}
+
 .point-card-container {
   display: grid;
   font-size: 1.5em;
