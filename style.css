@@ -40,7 +40,7 @@ header {
 
 .display-card {
   align-items: center;
-  background: rgba(51, 51, 51, 0.7);
+  background: rgba(51, 51, 51, 0.6 );
   border-radius: 15px;
   box-shadow: -8px 8px 8px 2px rgba(51, 51, 51, 0.4);
   color: #ffffff;
@@ -56,11 +56,11 @@ header {
 /*start-menu*/
 .start-menu,
 .clueCard {
-  height: 660px;
+  height: 650px;
   padding: 20px;
   width: 1100px;
   position: absolute;
-  background: rgba(51, 51, 51, 0.8);
+  background: rgba(51, 51, 51, 0.87);
   border-radius: 55px;
 }
 
@@ -115,19 +115,29 @@ h1 {
 .game-setup-text,
 .how-to-play-title,
 .card-question {
-  font-size: 2.2em;
+  font-size: 2em;
   text-shadow: -1px -1px 0 rgba(51, 51, 51), 1px -1px 0 rgba(51, 51, 51),
     -1px 1px 0 rgba(51, 51, 51), 1px 1px 0 rgba(51, 51, 51),
     -4px 5px rgba(51, 51, 51, 0.4);
 }
 
+.game-setup-text {
+  letter-spacing: 0.0525em;
+  margin-bottom: 20px;
+}
+
 .how-to-play-title {
-  font-size: 1.8em;
+  font-size: 1.4em;
+  padding-top: 50px;
+  font-weight: 400;
 }
 
 .card-question {
   font-size: 1.5em;
   margin: 20px 150px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
 }
 
 .answer-input {
@@ -135,10 +145,11 @@ h1 {
 }
 
 .how-to-play-text {
-  font-size: 0.9em;
+  font-size: 1.1em;
   width: 750px;
   text-align: center;
   line-height: 1.4;
+  font-weight: 200;
 }
 
 /*GAME BOARD*/
