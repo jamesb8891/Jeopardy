@@ -26,23 +26,23 @@ class Game {
   }
 
   filterQuestions(randomCategoryIdNumber, pointValue) {
-    let filterCategory = data.clues.filter(clue => {
+    let filterQuestion = data.clues.filter(clue => {
       return (
         clue.categoryId === randomCategoryIdNumber &&
         clue.pointValue === pointValue
       );
     });
-    const randomIndex = Math.floor(Math.random() * filterCategory.length);
-    return filterCategory[randomIndex];
+    const randomIndex = Math.floor(Math.random() * filterQuestion.length);
+    return filterQuestion[randomIndex];
   }
 
   retrieveCategory(category) {
     for (var pointValue = 100; pointValue < 501; pointValue += 100) {
-      var eachCategory = this.filterQuestions(
+      var eachClue = this.filterQuestions(
         randomCategoryIds[category],
         pointValue
       );
-      gameQuestions.push(eachCategory);
+      gameQuestions.push(eachClue);
     }
   }
 
@@ -100,7 +100,7 @@ class Game {
       domUpdates.domCategories(-5);
       domUpdates.changeCat(-1);
       this.doublePoints();
-      domUpdates.domClues();
+      domUpdates.renderClues();
       domUpdates.displayRound();
     }
   }
