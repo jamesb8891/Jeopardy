@@ -1,11 +1,11 @@
 const domUpdates = {
   initializePlayers() {
-    document.querySelector(".player-one-name").innerText =
-      playerOneInput.value || "Player 1";
-    document.querySelector(".player-two-name").innerText =
-      playerTwoInput.value || "Player 2";
-    document.querySelector(".player-three-name").innerText =
-      playerThreeInput.value || "Player 3";
+    var playerOneInput = document.querySelector(".player-one-input");
+    var playerTwoInput = document.querySelector(".player-two-input");
+    var playerThreeInput = document.querySelector(".player-three-input");
+    document.querySelector(".player-one-name").innerText = playerOneInput.value || "Player 1";
+    document.querySelector(".player-two-name").innerText = playerTwoInput.value || "Player 2";
+    document.querySelector(".player-three-name").innerText = playerThreeInput.value || "Player 3";
     document.querySelector(".start-menu").remove();
   },
 
