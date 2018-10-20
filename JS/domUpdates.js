@@ -55,7 +55,7 @@ const domUpdates = {
     }
   },
 
-  domClues() {
+  renderClues() {
     for (var i = 0; i < 20; i++) {
       card[i] = document.querySelector(`.card${i}`).innerText =
         gameQuestions[`${i}`].pointValue;

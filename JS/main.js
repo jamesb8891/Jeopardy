@@ -38,7 +38,7 @@ const initialize = () => {
   game.retrieveCategory(3);
   domUpdates.domCategories(-5);
   domUpdates.changeCat(-1);
-  domUpdates.domClues();
+  domUpdates.renderClues();
 };
 
 const addPlayers = () => {
