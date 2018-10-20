@@ -67,7 +67,8 @@ const domUpdates = {
       if (e.target.className === `card${i}`) {
         e.target.parentElement.classList.add("hidden");
         clueContainer.classList.remove("hidden");
-        clueCard.innerHTML = `${gameQuestions[`${i}`].question}`;
+        currentClue = `${gameQuestions[`${i}`].question}`;
+        clueCard.innerHTML = currentClue
       }
     }
   },
@@ -76,23 +77,8 @@ const domUpdates = {
     answerInput.value = "";
   },
 
-  checkAnswer() {
-    domUpdates.clearInput();
-    matchedClue = gameQuestions.find(clue => {
-      return (
-        clue.question === document.querySelector(".card-question").innerText
-      );
-    });
-    if (matchedClue.answer === answerInput.value) {
-      game.increaseScore();
-    } else {
-      game.decreaseScore();
-    }
-    clueContainer.classList.add("hidden");
-    game.turnAssignment();
-    game.questionCounter++;
-    game.setRound2();
-    game.setRound3();
+  playerScore(i, score) {
+    document.querySelector(`.player${i}-score`).innerText = score;
   },
 
   resetRound() {
@@ -115,11 +101,16 @@ const domUpdates = {
     document.querySelector(".final-question-wager").classList.remove("hidden");
   },
 
+  runPlayers() {
+    player.checkAnswer();
+  },
+
+
   checkWager() {},
 
   checkFinalAnswers() {}
 };
 
 if (typeof module !== "undefined") {
-  module.exports = domUpdates;
+  module.exports = domUpdates
 }

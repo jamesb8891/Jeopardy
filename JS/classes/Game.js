@@ -53,36 +53,6 @@ class Game {
     }
   }
 
-  increaseScore() {
-    if (this.turnCounter === 1) {
-      let newScore = (this.players[0].score += matchedClue.pointValue);
-      document.querySelector(".player1-score").innerText = newScore;
-    }
-    if (this.turnCounter === 2) {
-      let newScore = (this.players[1].score += matchedClue.pointValue);
-      document.querySelector(".player2-score");
-    }
-    if (this.turnCounter === 3) {
-      let newScore = (this.players[2].score += matchedClue.pointValue);
-      document.querySelector(".player3-score").innerText = newScore;
-    }
-  }
-
-  decreaseScore() {
-    if (this.turnCounter === 1) {
-      let newScore = (this.players[0].score -= matchedClue.pointValue);
-      document.querySelector(".player1-score").innerText = newScore;
-    }
-    if (this.turnCounter === 2) {
-      let newScore = (this.players[1].score -= matchedClue.pointValue);
-      document.querySelector(".player2-score").innerText = newScore;
-    }
-    if (this.turnCounter === 3) {
-      let newScore = (this.players[2].score -= matchedClue.pointValue);
-      document.querySelector(".player3-score").innerText = newScore;
-    }
-  }
-
   setRound2() {
     if (this.questionCounter === 20) {
       this.round = 2;
