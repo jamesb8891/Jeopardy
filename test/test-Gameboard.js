@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 const Gameboard = require("../JS/classes/Gameboard.js");
-const data = require("../JS/Data.js");
+global.data = require('../JS/Data.js')
 
 describe("Gameboard", function() {
   beforeEach(function() {
@@ -22,6 +22,32 @@ describe("Gameboard", function() {
 
   it("should have randomCategoryIds to equal an empty array", function() {
     expect(gameboard.randomCategoryIds).to.eql([]);
+  });
+
+  it("should have generateRandomCategoryIds to equal an array", function() {
+    gameboard.generateRandomCategoryIds();
+    expect(gameboard.randomCategoryIds.length).to.equal(4);
+  });
+
+  it("should have generateRandomCategoryIds to equal an array with a length of 4", function() {
+    gameboard.generateRandomCategoryIds();
+    gameboard.randomIdsLengthSetter();
+    expect(gameboard.randomCategoryIds.length).to.equal(4);
+  });
+
+  it("should return an object that is a question", function() {
+    gameboard.filterQuestions();
+    expect(gameboard.filterQuestions).to.be.an.instanceof(Object);
+  });
+
+  it("should return an array", function() {
+    gameboard.retrieveCategory(0);
+    expect(gameboard.gameQuestions).to.be.an.instanceof(Array);
+  });
+
+  it("should return an array of 5 questions", function() {
+    gameboard.retrieveCategory(0);
+    expect(gameboard.gameQuestions.length).to.equal(5);
   });
 
 

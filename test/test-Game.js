@@ -51,10 +51,4 @@ describe("Game", function() {
     game.turnAssignment();
     expect(game.turnCounter).to.equal(1);
   });
-
-  // it('should put four random categories into an array', function() {
-  //   game.setCategories()
-  //   expect(categoriesArray.length).to.equal(4)
-  // })
-  
 });
