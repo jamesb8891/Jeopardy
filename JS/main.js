@@ -11,7 +11,7 @@ document.querySelector(".final-question-answer-submit").addEventListener("click"
 const initialize = () => {
   game = new Game();
   gameboard = new Gameboard();
-  gameboard.recursiveCall();
+  gameboard.randomIdsLengthSetter();
   gameboard.filterQuestions();
   gameboard.retrieveCategory(0);
   gameboard.retrieveCategory(1);
