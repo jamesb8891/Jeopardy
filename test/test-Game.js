@@ -28,32 +28,33 @@ describe("Game", function() {
   it("should be able to increase round to 2", function() {
     game.advanceRound();
     expect(game.round).to.equal(2);
-
-    it("should be able to increase round to 3", function() {
-      game.advanceRound();
-      game.advanceRound();
-      expect(game.round).to.equal(3);
-    });
-
-    it("should have a default turnCounter of 1", function() {
-      expect(game.turnCounter).to.equal(1);
-    });
-
-    it("should be able to increment turns", function() {
-      game.turnAssignment();
-      expect(game.turnCounter).to.equal(2);
-    });
-
-    it("should be able to reset turn assignment to 1 if turn assignment gets to 4", function() {
-      game.turnAssignment();
-      game.turnAssignment();
-      game.turnAssignment();
-      expect(game.turnCounter).to.equal(1);
-    });
-
-    // it('should put four random categories into an array', function() {
-    //   game.setCategories()
-    //   expect(categoriesArray.length).to.equal(4)
-    // })
   });
+
+  it("should be able to increase round to 3", function() {
+    game.advanceRound();
+    game.advanceRound();
+    expect(game.round).to.equal(3);
+  });
+
+  it("should have a default turnCounter of 1", function() {
+    expect(game.turnCounter).to.equal(1);
+  });
+
+  it("should be able to increment turns", function() {
+    game.turnAssignment();
+    expect(game.turnCounter).to.equal(2);
+  });
+
+  it("should be able to reset turn assignment to 1 if turn assignment gets to 4", function() {
+    game.turnAssignment();
+    game.turnAssignment();
+    game.turnAssignment();
+    expect(game.turnCounter).to.equal(1);
+  });
+
+  // it('should put four random categories into an array', function() {
+  //   game.setCategories()
+  //   expect(categoriesArray.length).to.equal(4)
+  // })
+  
 });
