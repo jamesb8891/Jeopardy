@@ -17,11 +17,12 @@ let finalQuestionWagerSubmit = document.querySelector(
 let finalQuestionAnswerSubmit = document.querySelector(
   ".final-question-answer-submit"
 );
+let matchedClue;
 
 
 startButton.addEventListener("click", domUpdates.initializePlayers);
 pointCards.addEventListener("click", domUpdates.domClueCard);
-answerButton.addEventListener("click", domUpdates.checkAnswer);
+answerButton.addEventListener("click", domUpdates.runPlayers);
 finalQuestionWagerSubmit.addEventListener("click", domUpdates.checkWager);
 finalQuestionAnswerSubmit.addEventListener(
   "click",
@@ -42,6 +43,7 @@ const initialize = () => {
 };
 
 const addPlayers = () => {
+  player = new Player("player")
   player1 = new Player("player1");
   player2 = new Player("player2");
   player3 = new Player("player3");
@@ -52,3 +54,4 @@ const addPlayers = () => {
 
 initialize();
 addPlayers();
+console.log(gameQuestions)
