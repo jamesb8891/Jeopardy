@@ -123,16 +123,12 @@ const domUpdates = {
     let randomNum = Math.floor(Math.random() * 3 + 0);
      currentClue = gameboard.gameQuestions[randomNum].question;
       document.querySelector(".final-card-question").innerHTML = currentClue
-      console.log(currentClue)
   },
 
   getFinalAnswers() {
     playerAnswer1 = document.querySelector('.playerAnswer1').value  
-    console.log(playerAnswer1)
     playerAnswer2 = document.querySelector('.playerAnswer2').value  
-    console.log(playerAnswer2)
     playerAnswer3 = document.querySelector('.playerAnswer3').value  
-    console.log(playerAnswer3)
     player.checkFinalAnswers(playerAnswer1, playerAnswer2, playerAnswer3)
   },
   

@@ -62,8 +62,6 @@ class Game {
     winner = this.players.find( player => {
       return player.score === winnerScore
     })
-    // winner = winner.id
-    // console.log(winner)
     domUpdates.displayWinner()
   }
 }
