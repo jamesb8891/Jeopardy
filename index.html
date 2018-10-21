@@ -35,24 +35,30 @@
   </section>
   <section class="final-question-wager hidden">
     <section class="display-card clueCard">
-      <p class="final-question-title">FINAL JEOPARDY!</p>
+      <p class="final-question-title card-question">FINAL JEOPARDY!</p>
       <p>Player 1's Wager : <input class="playerWager1" placeholder="Enter Your Wager" type="text"></p>
       <p>Player 2's Wager : <input class="playerWager2" placeholder="Enter Your Wager" type="text"></p>
       <p>Player 3's Wager : <input class="playerWager3" placeholder="Enter Your Wager" type="text"></p>
-      <button class="final-question-wager-submit">Enter</button>
+      <button class="final-question-wager-submit answer-button">Enter</button>
     </section>
   </section>
   <section class="final-question-answer hidden">
     <section class="display-card clueCard">
-      <p class="final-question-title">FINAL JEOPARDY!</p>
-      <p class="card-question"></p>
+      <p class="final-question-title card-question">FINAL JEOPARDY!</p>
+      <p class="final-card-question card-question"></p>
       <p>Player 1's Answer : <input class="playerAnswer1" placeholder="Enter Your Answer" type="text"></p>
       <p>Player 2's Answer : <input class="playerAnswer2" placeholder="Enter Your Answer" type="text"></p>
       <p>Player 3's Answer : <input class="playerAnswer3" placeholder="Enter Your Answer" type="text"></p>
-      <button class="final-question-answer-submit">Enter</button>
+      <button class="final-question-answer-submit answer-button">Enter</button>
     </section>
   </section>
-
+   <section class="winner-card hidden">
+    <section class="display-card clueCard">
+      <p>THE WINNER IS</p>
+      <p class="winner-name"></p>
+      <input class="answer-button" type="button" value="New Game!" onClick="window.location.reload()">
+    </section>
+  </section>
   <section class="start-menu-container">
     <section class="display-card start-menu">
       <p class="game-setup-text">Start New Game!</p>

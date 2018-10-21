@@ -111,24 +111,37 @@ const domUpdates = {
   },
 
   getWager() {
-    playerWager1 = document.querySelector('.playerWager1').value  
-    console.log(playerWager1)
-     playerWager2 = document.querySelector('.playerWager2').value  
-    console.log(playerWager2)
-     playerWager3 = document.querySelector('.playerWager3').value  
-    console.log(playerWager3)
+    playerWager1 = document.querySelector('.playerWager1').value
+    playerWager2 = document.querySelector('.playerWager2').value
+    playerWager3 = document.querySelector('.playerWager3').value 
+    domUpdates.displayFinalQuestion()
+  },
+
+  displayFinalQuestion() {
     document.querySelector('.final-question-wager').remove()
-    domUpdates.getFinalAnswers()
+    document.querySelector(".final-question-answer").classList.remove("hidden");
+    let randomNum = Math.floor(Math.random() * 3 + 0);
+     currentClue = gameboard.gameQuestions[randomNum].question;
+      document.querySelector(".final-card-question").innerHTML = currentClue
+      console.log(currentClue)
   },
 
   getFinalAnswers() {
-    document.querySelector(".final-question-answer").classList.remove("hidden");
     playerAnswer1 = document.querySelector('.playerAnswer1').value  
     console.log(playerAnswer1)
-     playerAnswer2 = document.querySelector('.playerAnswer2').value  
+    playerAnswer2 = document.querySelector('.playerAnswer2').value  
     console.log(playerAnswer2)
-     playerAnswer3 = document.querySelector('.playerAnswer3').value  
+    playerAnswer3 = document.querySelector('.playerAnswer3').value  
     console.log(playerAnswer3)
+    player.checkFinalAnswers(playerAnswer1, playerAnswer2, playerAnswer3)
+  },
+  
+  displayWinner() {
+    document.querySelector(".final-question-answer").remove();
+    document.querySelector(".winner-card").classList.remove("hidden");
+    winner = winner.id
+    console.log(winner)
+    document.querySelector(".winner-name").innerText = winner
   }
 };
 
