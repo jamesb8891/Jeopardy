@@ -1,6 +1,5 @@
 class Game {
-  constructor(gameState) {
-    this.gameState = gameState;
+  constructor() {
     this.round = 1;
     this.players = [];
     this.turnCounter = 1;
@@ -11,16 +10,17 @@ class Game {
      return this.round++;
   }
 
+
   generateRandomCategoryIds() {
     const randomNumber = Math.floor(Math.random() * 10 + 1);
-    if (!randomCategoryIds.includes(randomNumber)) {
-      randomCategoryIds.push(randomNumber);
+    if (!gameboard.randomCategoryIds.includes(randomNumber)) {
+      gameboard.randomCategoryIds.push(randomNumber);
       this.recursiveCall();
     }
   }
 
   recursiveCall() {
-    for (var i = 0; randomCategoryIds.length < 4; i++) {
+    for (var i = 0; gameboard.randomCategoryIds.length < 4; i++) {
       this.generateRandomCategoryIds();
     }
   }
@@ -39,10 +39,10 @@ class Game {
   retrieveCategory(category) {
     for (var pointValue = 100; pointValue < 501; pointValue += 100) {
       var eachClue = this.filterQuestions(
-        randomCategoryIds[category],
+        gameboard.randomCategoryIds[category],
         pointValue
       );
-      gameQuestions.push(eachClue);
+      gameboard.gameQuestions.push(eachClue);
     }
   }
 
@@ -56,10 +56,9 @@ class Game {
   setRound2() {
     if (this.questionCounter === 20) {
       this.round = 2;
-      gameQuestions = [];
-      randomCategoryIds = [];
-      card = [];
-      categoryArr = [];
+      gameboard.gameQuestions = [];
+      gameboard.randomCategoryIds = [];
+      gameboard.gameCategories = [];
       this.recursiveCall();
       this.filterQuestions();
       this.retrieveCategory(0);
@@ -78,9 +77,8 @@ class Game {
   setRound3() {
     if (this.questionCounter === 40) {
       this.round = 3;
-      gameQuestions = [];
-      randomCategoryIds = [];
-      card = [];
+      gameboard.gameQuestions = [];
+      gameboard.randomCategoryIds = [];
       this.recursiveCall();
       this.filterQuestions();
       this.retrieveCategory(0);
@@ -90,7 +88,7 @@ class Game {
   }
 
   doublePoints() {
-    gameQuestions.map(question => {
+    gameboard.gameQuestions.map(question => {
       question.pointValue *= 2;
     });
   }

@@ -4,12 +4,11 @@ class Player {
     this.id = id;
   }
 
-  checkAnswer() {matchedClue = gameQuestions.find(clue => {
+  checkAnswer() {matchedClue = gameboard.gameQuestions.find(clue => {
       return (
         clue.question === currentClue
       );
     });
-    console.log(matchedClue)
     if (matchedClue.answer === answerInput.value) {
       var correct = true
     } else {
@@ -17,7 +16,7 @@ class Player {
     }
     this.updateScore(correct)
     domUpdates.clearInput();
-    clueContainer.classList.add("hidden");
+    domUpdates.toggleClueContainer();
     game.turnAssignment();
     game.questionCounter++;
     game.setRound2();
