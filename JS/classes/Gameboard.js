@@ -2,18 +2,18 @@ class Gameboard {
   constructor() {
     this.gameCategories = [];
     this.gameQuestions = [];
-    this.randomCategoryIds =[];
+    this.randomCategoryIds = [];
   }
 
   generateRandomCategoryIds() {
     const randomNumber = Math.floor(Math.random() * 10 + 1);
     if (!this.randomCategoryIds.includes(randomNumber)) {
       this.randomCategoryIds.push(randomNumber);
-      this.recursiveCall();
+      this.randomIdsLengthSetter();
     }
   }
 
-  recursiveCall() {
+  randomIdsLengthSetter() {
     for (var i = 0; this.randomCategoryIds.length < 4; i++) {
       this.generateRandomCategoryIds();
     }
