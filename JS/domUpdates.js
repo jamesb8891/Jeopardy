@@ -110,10 +110,26 @@ const domUpdates = {
     player.checkAnswer();
   },
 
+  getWager() {
+    playerWager1 = document.querySelector('.playerWager1').value  
+    console.log(playerWager1)
+     playerWager2 = document.querySelector('.playerWager2').value  
+    console.log(playerWager2)
+     playerWager3 = document.querySelector('.playerWager3').value  
+    console.log(playerWager3)
+    document.querySelector('.final-question-wager').remove()
+    domUpdates.getFinalAnswers()
+  },
 
-  checkWager() {},
-
-  checkFinalAnswers() {}
+  getFinalAnswers() {
+    document.querySelector(".final-question-answer").classList.remove("hidden");
+    playerAnswer1 = document.querySelector('.playerAnswer1').value  
+    console.log(playerAnswer1)
+     playerAnswer2 = document.querySelector('.playerAnswer2').value  
+    console.log(playerAnswer2)
+     playerAnswer3 = document.querySelector('.playerAnswer3').value  
+    console.log(playerAnswer3)
+  }
 };
 
 if (typeof module !== "undefined") {
