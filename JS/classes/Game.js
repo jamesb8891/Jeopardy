@@ -24,7 +24,7 @@ class Game {
       gameboard.gameQuestions = [];
       gameboard.randomCategoryIds = [];
       gameboard.gameCategories = [];
-      gameboard.recursiveCall();
+      gameboard.randomIdsLengthSetter();
       gameboard.filterQuestions();
       gameboard.retrieveCategory(0);
       gameboard.retrieveCategory(1);
@@ -44,7 +44,7 @@ class Game {
       this.round = 3;
       gameboard.gameQuestions = [];
       gameboard.randomCategoryIds = [];
-      gameboard.recursiveCall();
+      gameboard.randomIdsLengthSetter();
       gameboard.filterQuestions();
       gameboard.retrieveCategory(0);
       domUpdates.displayRound();
