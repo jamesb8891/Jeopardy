@@ -1,21 +1,12 @@
 let answerInput = document.querySelector(".answer-input");
 let matchedClue;
 
-document
-  .querySelector(".start-button")
-  .addEventListener("click", domUpdates.initializePlayers);
-document
-  .querySelector(".point-card-container")
-  .addEventListener("click", domUpdates.domClueCard);
-document
-  .querySelector(".answer-button")
-  .addEventListener("click", domUpdates.runPlayers);
-document
-  .querySelector(".final-question-wager-submit")
-  .addEventListener("click", domUpdates.checkWager);
-document
-  .querySelector(".final-question-answer-submit")
-  .addEventListener("click", domUpdates.checkFinalAnswer);
+let winner;
+document.querySelector(".start-button").addEventListener("click", domUpdates.initializePlayers);
+document.querySelector(".point-card-container").addEventListener("click", domUpdates.domClueCard);
+document.querySelector(".answer-button").addEventListener("click", domUpdates.runPlayers);
+document.querySelector(".final-question-wager-submit").addEventListener("click", domUpdates.getWager);
+document.querySelector(".final-question-answer-submit").addEventListener("click", domUpdates.getFinalAnswers);
 
 const initialize = () => {
   game = new Game();

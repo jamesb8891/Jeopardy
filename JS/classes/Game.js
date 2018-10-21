@@ -57,6 +57,16 @@ class Game {
       question.pointValue *= 2;
     });
   }
+
+  declareWinner() {
+    let winnerScore = Math.max(player1.score, player2.score, player3.score)
+    winner = this.players.find( player => {
+      return player.score === winnerScore
+    })
+    // winner = winner.id
+    // console.log(winner)
+    domUpdates.displayWinner()
+  }
 }
 
 if (typeof module !== "undefined") {
