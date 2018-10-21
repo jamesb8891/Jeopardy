@@ -3,9 +3,12 @@ const domUpdates = {
     var playerOneInput = document.querySelector(".player-one-input");
     var playerTwoInput = document.querySelector(".player-two-input");
     var playerThreeInput = document.querySelector(".player-three-input");
-    document.querySelector(".player-one-name").innerText = playerOneInput.value || "Player 1";
-    document.querySelector(".player-two-name").innerText = playerTwoInput.value || "Player 2";
-    document.querySelector(".player-three-name").innerText = playerThreeInput.value || "Player 3";
+    document.querySelector(".player-one-name").innerText =
+      playerOneInput.value || "Player 1";
+    document.querySelector(".player-two-name").innerText =
+      playerTwoInput.value || "Player 2";
+    document.querySelector(".player-three-name").innerText =
+      playerThreeInput.value || "Player 3";
     document.querySelector(".start-menu").remove();
   },
 
@@ -50,8 +53,9 @@ const domUpdates = {
   changeCat(index) {
     for (var i = 1; i < 5; i++) {
       index += 1;
-      gameboard.gameCategories[index] = document.querySelector(`.category${i}`).innerText =
-        gameboard.gameCategories[`${index}`];
+      gameboard.gameCategories[index] = document.querySelector(
+        `.category${i}`
+      ).innerText = gameboard.gameCategories[`${index}`];
     }
   },
 
@@ -69,13 +73,13 @@ const domUpdates = {
         e.target.parentElement.classList.add("hidden");
         domUpdates.toggleClueContainer();
         currentClue = `${gameboard.gameQuestions[`${i}`].question}`;
-        document.querySelector(".card-question").innerHTML = currentClue
+        document.querySelector(".card-question").innerHTML = currentClue;
       }
     }
   },
 
   toggleClueContainer() {
-    document.querySelector(".clue-container").classList.toggle("hidden")
+    document.querySelector(".clue-container").classList.toggle("hidden");
   },
 
   clearInput() {
@@ -146,5 +150,5 @@ const domUpdates = {
 };
 
 if (typeof module !== "undefined") {
-  module.exports = domUpdates
+  module.exports = domUpdates;
 }

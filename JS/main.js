@@ -1,7 +1,7 @@
 let answerInput = document.querySelector(".answer-input");
 let matchedClue;
-let winner;
 
+let winner;
 document.querySelector(".start-button").addEventListener("click", domUpdates.initializePlayers);
 document.querySelector(".point-card-container").addEventListener("click", domUpdates.domClueCard);
 document.querySelector(".answer-button").addEventListener("click", domUpdates.runPlayers);
@@ -23,7 +23,7 @@ const initialize = () => {
 };
 
 const addPlayers = () => {
-  player = new Player("player")
+  player = new Player("player");
   player1 = new Player("player1");
   player2 = new Player("player2");
   player3 = new Player("player3");

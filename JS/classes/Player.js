@@ -9,13 +9,14 @@ class Player {
       return (
         clue.question === currentClue
       );
+
     });
     if (matchedClue.answer === answerInput.value) {
-      var correct = true
+      var correct = true;
     } else {
-      var correct = false
+      var correct = false;
     }
-    this.updateScore(correct)
+    this.updateScore(correct);
     domUpdates.clearInput();
     domUpdates.toggleClueContainer();
     game.turnAssignment();
@@ -25,33 +26,33 @@ class Player {
   }
 
   updateScore(answer) {
-    switch(answer) {
+    switch (answer) {
       case true:
         if (game.turnCounter === 1) {
           var newScore = (game.players[0].score += matchedClue.pointValue);
-          domUpdates.playerScore(1, newScore)
+          domUpdates.playerScore(1, newScore);
         }
         if (game.turnCounter === 2) {
           var newScore = (game.players[1].score += matchedClue.pointValue);
-          domUpdates.playerScore(2, newScore)
+          domUpdates.playerScore(2, newScore);
         }
         if (game.turnCounter === 3) {
-           var newScore = (game.players[2].score += matchedClue.pointValue);
-           domUpdates.playerScore(3, newScore)
+          var newScore = (game.players[2].score += matchedClue.pointValue);
+          domUpdates.playerScore(3, newScore);
         }
         break;
       case false:
         if (game.turnCounter === 1) {
           var newScore = (game.players[0].score -= matchedClue.pointValue);
-          domUpdates.playerScore(1, newScore)
+          domUpdates.playerScore(1, newScore);
         }
         if (game.turnCounter === 2) {
           var newScore = (game.players[1].score -= matchedClue.pointValue);
-          domUpdates.playerScore(2, newScore)
+          domUpdates.playerScore(2, newScore);
         }
         if (game.turnCounter === 3) {
           var newScore = (game.players[2].score -= matchedClue.pointValue);
-          domUpdates.playerScore(3, newScore)
+          domUpdates.playerScore(3, newScore);
         }
         break;
     }
@@ -100,7 +101,6 @@ class Player {
     this.updateWagerScore(correct1, correct2, correct3)
   }
 }
-
 
 if (typeof module !== "undefined") {
   module.exports = Player;

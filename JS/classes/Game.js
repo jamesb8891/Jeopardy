@@ -4,10 +4,11 @@ class Game {
     this.players = [];
     this.turnCounter = 1;
     this.questionCounter = 0;
+    this.gameState = "active";
   }
 
   advanceRound() {
-     return this.round++;
+    return this.round++;
   }
 
   turnAssignment() {
