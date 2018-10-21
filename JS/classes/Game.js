@@ -10,42 +10,6 @@ class Game {
      return this.round++;
   }
 
-
-  generateRandomCategoryIds() {
-    const randomNumber = Math.floor(Math.random() * 10 + 1);
-    if (!gameboard.randomCategoryIds.includes(randomNumber)) {
-      gameboard.randomCategoryIds.push(randomNumber);
-      this.recursiveCall();
-    }
-  }
-
-  recursiveCall() {
-    for (var i = 0; gameboard.randomCategoryIds.length < 4; i++) {
-      this.generateRandomCategoryIds();
-    }
-  }
-
-  filterQuestions(randomCategoryIdNumber, pointValue) {
-    let filterQuestion = data.clues.filter(clue => {
-      return (
-        clue.categoryId === randomCategoryIdNumber &&
-        clue.pointValue === pointValue
-      );
-    });
-    const randomIndex = Math.floor(Math.random() * filterQuestion.length);
-    return filterQuestion[randomIndex];
-  }
-
-  retrieveCategory(category) {
-    for (var pointValue = 100; pointValue < 501; pointValue += 100) {
-      var eachClue = this.filterQuestions(
-        gameboard.randomCategoryIds[category],
-        pointValue
-      );
-      gameboard.gameQuestions.push(eachClue);
-    }
-  }
-
   turnAssignment() {
     this.turnCounter++;
     if (this.turnCounter === 4) {
@@ -59,12 +23,12 @@ class Game {
       gameboard.gameQuestions = [];
       gameboard.randomCategoryIds = [];
       gameboard.gameCategories = [];
-      this.recursiveCall();
-      this.filterQuestions();
-      this.retrieveCategory(0);
-      this.retrieveCategory(1);
-      this.retrieveCategory(2);
-      this.retrieveCategory(3);
+      gameboard.recursiveCall();
+      gameboard.filterQuestions();
+      gameboard.retrieveCategory(0);
+      gameboard.retrieveCategory(1);
+      gameboard.retrieveCategory(2);
+      gameboard.retrieveCategory(3);
       domUpdates.resetRound();
       domUpdates.domCategories(-5);
       domUpdates.changeCat(-1);
@@ -79,9 +43,9 @@ class Game {
       this.round = 3;
       gameboard.gameQuestions = [];
       gameboard.randomCategoryIds = [];
-      this.recursiveCall();
-      this.filterQuestions();
-      this.retrieveCategory(0);
+      gameboard.recursiveCall();
+      gameboard.filterQuestions();
+      gameboard.retrieveCategory(0);
       domUpdates.displayRound();
       domUpdates.finalQuestion();
     }

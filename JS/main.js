@@ -1,6 +1,3 @@
-var playerOneInput = document.querySelector(".player-one-input");
-var playerTwoInput = document.querySelector(".player-two-input");
-var playerThreeInput = document.querySelector(".player-three-input");
 let answerInput = document.querySelector(".answer-input");
 let matchedClue;
 
@@ -17,12 +14,12 @@ document.querySelector(".final-question-answer-submit").addEventListener(
 const initialize = () => {
   game = new Game();
   gameboard = new Gameboard();
-  game.recursiveCall();
-  game.filterQuestions();
-  game.retrieveCategory(0);
-  game.retrieveCategory(1);
-  game.retrieveCategory(2);
-  game.retrieveCategory(3);
+  gameboard.recursiveCall();
+  gameboard.filterQuestions();
+  gameboard.retrieveCategory(0);
+  gameboard.retrieveCategory(1);
+  gameboard.retrieveCategory(2);
+  gameboard.retrieveCategory(3);
   domUpdates.domCategories(-5);
   domUpdates.changeCat(-1);
   domUpdates.renderClues();
@@ -40,4 +37,3 @@ const addPlayers = () => {
 
 initialize();
 addPlayers();
-console.log(gameboard.gameQuestions)
