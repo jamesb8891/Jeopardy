@@ -4,6 +4,17 @@
 
 A three player Jeopardy browser game.
 
+### Live App
+
+https://jamesb8891.github.io/Jeopardy/
+
+### Installation Instructions
+
+  * Open your Terminal
+  * Type in
+  *
+  
+  
 ### Project Background:
 
 This project will help us learn object-oriented programming (OOP) principles by building the game Jeopardy. This project is an opportunity for us to use classes and to build a program in a larger scale than what we have previously done in other projects. This project is also an opportunity for us to build out a program based on user stories. In this project, we will also approach our challenges with an analytical approach.
