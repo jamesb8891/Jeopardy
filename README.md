@@ -12,7 +12,7 @@ https://jamesb8891.github.io/Jeopardy/
 
   Open your Terminal
   
-  Copy and paste the lines below into your terminal:
+Copy and paste the following lines below into your terminal:
   
  ```git clone https://github.com/jamesb8891/Jeopardy.git```
  
