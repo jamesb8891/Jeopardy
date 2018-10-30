@@ -2,7 +2,7 @@
 
 ### Abstract:
 
-A three player Jeopardy in browser game. Turing School of Software & Design Front-End Program Mod 2 project.
+A three player Jeopardy browser game.
 
 ### Project Background:
 
@@ -17,7 +17,7 @@ This project will help us learn object-oriented programming (OOP) principles by 
   * Write modular, reusable code that follows SRP (Single Responibility Principle)
   * Create a robust test suite that thoroughly tests all functionality of a client-side application
 
-### About the game:
+### User Stories:
 
 Game play:
 
