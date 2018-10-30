@@ -11,8 +11,11 @@ https://jamesb8891.github.io/Jeopardy/
 ### Installation Instructions
 
   * Open your Terminal
-  * Type in
-  *
+  * Type in:
+  * git clone 
+  * cd Jeopardy/
+  * npm install
+  * npm start
   
   
 ### Project Background:
