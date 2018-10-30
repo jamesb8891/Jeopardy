@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 const Gameboard = require("../JS/classes/Gameboard.js");
-global.data = require('../JS/Data.js')
+global.data = require("../JS/Data.js");
 
 describe("Gameboard", function() {
   beforeEach(function() {
@@ -49,18 +49,4 @@ describe("Gameboard", function() {
     gameboard.retrieveCategory(0);
     expect(gameboard.gameQuestions.length).to.equal(5);
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

@@ -59,11 +59,11 @@ class Game {
   }
 
   declareWinner() {
-    let winnerScore = Math.max(player1.score, player2.score, player3.score)
-    winner = this.players.find( player => {
-      return player.score === winnerScore
-    })
-    domUpdates.displayWinner()
+    let winnerScore = Math.max(player1.score, player2.score, player3.score);
+    winner = this.players.find(player => {
+      return player.score === winnerScore;
+    });
+    domUpdates.displayWinner();
   }
 }
 
