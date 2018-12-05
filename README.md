@@ -84,7 +84,7 @@ When it is my turn:
 
 We choose this as our inspiration because we liked the rounded edges, the drop shadow, and the overall clean look of the button.
 
-##### Our Wireframes:
+##### My Wireframes:
 
 <img width="635" alt="screen shot 2018-10-09 at 2 49 25 pm" src="https://user-images.githubusercontent.com/40005248/46751330-7d4a5c80-cc77-11e8-98b8-bf043b8dbe20.png">
 
