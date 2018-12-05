@@ -78,7 +78,7 @@ When it is my turn:
 
 ### Design and Layout
 
-##### Our Inspiration:
+##### My Inspiration:
 
 <img width="393" alt="screen shot 2018-10-09 at 2 46 32 pm" src="https://user-images.githubusercontent.com/40005248/46751216-188f0200-cc77-11e8-8b52-7da8711cbe65.png">
 
