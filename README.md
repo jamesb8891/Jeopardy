@@ -94,8 +94,3 @@ We choose this as our inspiration because we liked the rounded edges, the drop s
 
 ### Collaboration:
 James  Burbage @jamesb8891
-
-Loryn Mason @lorynmason
-
-##### DTR link:
-https://gist.github.com/lorynmason/2579b3ab535eeb7e1a1513922487e383
