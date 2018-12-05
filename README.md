@@ -91,6 +91,3 @@ We choose this as our inspiration because we liked the rounded edges, the drop s
 <img width="631" alt="screen shot 2018-10-09 at 2 50 44 pm" src="https://user-images.githubusercontent.com/40005248/46751377-96eba400-cc77-11e8-82f4-addfb54b4b4b.png">
 
 <img width="632" alt="screen shot 2018-10-09 at 2 51 07 pm" src="https://user-images.githubusercontent.com/40005248/46751400-acf96480-cc77-11e8-83a5-ff50bfcefbbd.png">
-
-### Collaboration:
-James  Burbage @jamesb8891
